@@ -203,12 +203,9 @@ marquee {
   width: 100%;
   height: 210px;
   display: block;
-
   object-fit: cover;
-
   background: #cccccc;
   border: 1px solid #333333;
-
   box-sizing: border-box;
 }
 
@@ -291,20 +288,17 @@ p {
 
 .old-button {
   display: inline-block;
-
   background: #d4d0c8;
   color: #000000 !important;
   text-decoration: none !important;
-
   font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
-
   padding: 2px 7px;
-
   border-top: 2px solid white;
   border-left: 2px solid white;
   border-right: 2px solid #555555;
   border-bottom: 2px solid #555555;
+  cursor: pointer;
 }
 
 .old-button:hover {
@@ -344,9 +338,114 @@ p {
   background: #eeeeee;
   border: 1px dashed #777777;
   padding: 8px;
-
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
+}
+
+
+/* ========================================================= */
+/* SOCIALS PAGE */
+/* ========================================================= */
+
+.social-intro {
+  background: #ffffdd;
+  border: 1px solid #999966;
+  padding: 8px;
+  margin-bottom: 14px;
+}
+
+.social-item {
+  padding: 5px 2px 7px 2px;
+}
+
+.social-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: #003366;
+}
+
+.social-handle {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+}
+
+.social-separator {
+  border: 0;
+  border-top: 1px dashed #777777;
+  margin: 9px 0;
+}
+
+.coming-soon {
+  font-weight: bold;
+  color: #990000;
+}
+
+
+/* ========================================================= */
+/* POPUP */
+/* ========================================================= */
+
+.social-popup {
+  display: none;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 270px;
+  background: #ece8c9;
+  border: 2px solid #333333;
+  z-index: 9999;
+  box-shadow: 3px 3px 0 #777777;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.social-popup-title {
+  background: #003366;
+  color: #ffffff;
+  padding: 5px 7px;
+  font-weight: bold;
+  font-size: 13px;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  line-height: 15px;
+  text-align: center;
+  background: #d4d0c8;
+  color: #000000;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #555555;
+  border-bottom: 2px solid #555555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+.popup-close:active {
+  border-top: 2px solid #555555;
+  border-left: 2px solid #555555;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.social-popup-content {
+  padding: 10px;
+  font-size: 13px;
+}
+
+.social-popup-content p {
+  margin: 0 0 9px 0;
+}
+
+.popup-buttons {
+  text-align: right;
 }
 
 
@@ -398,7 +497,7 @@ hr {
 
 
 /* ========================================================= */
-/* INTENTIONALLY OLD-SCHOOL FIXED WIDTH */
+/* OLD-SCHOOL FIXED WIDTH */
 /* ========================================================= */
 
 @media screen and (max-width: 780px) {
@@ -417,15 +516,9 @@ hr {
 </style>
 </head>
 
-
 <body>
 
 <div class="page">
-
-
-  <!-- ===================================================== -->
-  <!-- TOP BAR -->
-  <!-- ===================================================== -->
 
   <div class="topbar">
     Official Daan Tech Homepage
@@ -433,27 +526,10 @@ hr {
     Last updated: 5 September 2026
   </div>
 
-
-  <!-- ===================================================== -->
-  <!-- HEADER -->
-  <!-- ===================================================== -->
-
   <div class="header">
-
-    <h1>
-      WELCOME TO DAAN TECH
-    </h1>
-
-    <p>
-      Technology, experiments &amp; strange things from the Internet
-    </p>
-
+    <h1>WELCOME TO DAAN TECH</h1>
+    <p>Technology, experiments &amp; strange things from the Internet</p>
   </div>
-
-
-  <!-- ===================================================== -->
-  <!-- MARQUEE -->
-  <!-- ===================================================== -->
 
   <marquee scrollamount="3">
     ★ WELCOME TO DAAN TECH ★
@@ -464,59 +540,29 @@ hr {
     INTERNET STUFF ★
   </marquee>
 
-
-  <!-- ===================================================== -->
-  <!-- NAVIGATION -->
-  <!-- ===================================================== -->
-
   <div class="nav">
 
-    <a
-      href="#"
-      onclick="showPage('home'); return false;"
-    >
+    <a href="#" onclick="showPage('home'); return false;">
       HOME
     </a>
 
-    <a
-      href="#"
-      onclick="showPage('socials'); return false;"
-    >
+    <a href="#" onclick="showPage('socials'); return false;">
       SOCIALS
     </a>
 
-    <a
-      href="#"
-      onclick="showPage('projects'); return false;"
-    >
+    <a href="#" onclick="showPage('projects'); return false;">
       PROJECTS
     </a>
 
-    <a
-      href="#"
-      onclick="showPage('contact'); return false;"
-    >
+    <a href="#" onclick="showPage('contact'); return false;">
       CONTACT
     </a>
 
   </div>
 
-
-  <!-- ===================================================== -->
-  <!-- MAIN LAYOUT -->
-  <!-- ===================================================== -->
-
   <div class="layout">
 
-
-    <!-- =================================================== -->
-    <!-- LEFT SIDEBAR -->
-    <!-- =================================================== -->
-
     <div class="sidebar">
-
-
-      <!-- LATEST PROJECT -->
 
       <div class="box">
 
@@ -526,34 +572,24 @@ hr {
 
         <div class="box-content">
 
-          <span class="new blink">
-            NEW!
-          </span>
+          <span class="new blink">NEW!</span>
 
           <br>
 
-          <b>
-            Internet Experiment #01
-          </b>
+          <b>Internet Experiment #01</b>
 
           <p>
             A strange new web experiment involving old Internet
             design and modern technology.
           </p>
 
-          <a
-            href="#"
-            onclick="showPage('projects'); return false;"
-          >
+          <a href="#" onclick="showPage('projects'); return false;">
             Read more...
           </a>
 
         </div>
 
       </div>
-
-
-      <!-- VISITOR COUNTER -->
 
       <div class="box">
 
@@ -567,19 +603,13 @@ hr {
 
           <br><br>
 
-          <span
-            class="counter"
-            id="visitorCounter"
-          >
+          <span class="counter" id="visitorCounter">
             004821
           </span>
 
         </div>
 
       </div>
-
-
-      <!-- QUICK LINKS -->
 
       <div class="box">
 
@@ -589,45 +619,27 @@ hr {
 
         <div class="box-content site-links">
 
-          <a
-            href="#"
-            onclick="showPage('home'); return false;"
-          >
+          <a href="#" onclick="showPage('home'); return false;">
             Home Page
           </a>
 
-          <a
-            href="#"
-            onclick="showPage('projects'); return false;"
-          >
+          <a href="#" onclick="showPage('projects'); return false;">
             Latest Projects
           </a>
 
-          <a
-            href="#"
-            onclick="showPage('socials'); return false;"
-          >
+          <a href="https://www.youtube.com/@daan_tech1" target="_blank">
             YouTube
           </a>
 
-          <a
-            href="#"
-            onclick="showPage('socials'); return false;"
-          >
-            Instagram
-          </a>
-
-          <a
-            href="#"
-            onclick="showPage('socials'); return false;"
-          >
+          <a href="https://www.tiktok.com/@daan_tech1?_t=8s6jd25uwni&_r=1" target="_blank">
             TikTok
           </a>
 
-          <a
-            href="#"
-            onclick="showPage('contact'); return false;"
-          >
+          <a href="https://github.com/daantech1" target="_blank">
+            GitHub
+          </a>
+
+          <a href="#" onclick="showPage('contact'); return false;">
             Send E-Mail
           </a>
 
@@ -637,34 +649,17 @@ hr {
 
     </div>
 
-
-    <!-- =================================================== -->
-    <!-- MAIN CONTENT -->
-    <!-- =================================================== -->
-
     <div class="content">
-
 
       <!-- ================================================= -->
       <!-- HOME PAGE -->
       <!-- ================================================= -->
 
-      <div
-        id="page-home"
-        class="site-page"
-      >
+      <div id="page-home" class="site-page">
 
         <h2>
           Welcome to Daan Tech!
         </h2>
-
-
-        <!--
-          Put this file in the SAME GitHub repository/folder
-          as index.html:
-
-          daan-home-picture-wallpaper.jpg
-        -->
 
         <img
           src="daan-home-picture-wallpaper.jpg"
@@ -672,12 +667,10 @@ hr {
           class="home-picture"
         >
 
-
         <p>
           Welcome to the official retro website of
           <b>Daan Tech!</b>
         </p>
-
 
         <p>
           Daan Tech is all about technology, weird Internet experiments,
@@ -685,13 +678,11 @@ hr {
           fun tech ideas.
         </p>
 
-
         <p>
           This website is my small corner of the World Wide Web where I
           collect experiments, strange computer projects, coding ideas,
           technology videos and other digital things that I find interesting.
         </p>
-
 
         <p>
           You may find old computers, new AI tools, unusual software,
@@ -699,12 +690,10 @@ hr {
           Internet discoveries and things that probably did not need to exist.
         </p>
 
-
         <p>
           Whether you arrived here intentionally or accidentally clicked
           the wrong hyperlink, welcome!
         </p>
-
 
         <div class="notice">
 
@@ -716,16 +705,11 @@ hr {
 
         </div>
 
-
         <hr>
-
-
-        <!-- LATEST NEWS -->
 
         <h3>
           Latest News
         </h3>
-
 
         <p>
           <b>05.09.2026</b>
@@ -733,13 +717,11 @@ hr {
           The official Daan Tech homepage is now online.
         </p>
 
-
         <p>
           <b>02.09.2026</b>
           -
           Work has started on several new technology and Internet experiments.
         </p>
-
 
         <p>
           <b>28.08.2026</b>
@@ -747,12 +729,8 @@ hr {
           New AI experiments are currently being tested.
         </p>
 
-
         <p>
-          <span class="new blink">
-            NEW!
-          </span>
-
+          <span class="new blink">NEW!</span>
           New projects, videos and strange Internet things will be added soon.
         </p>
 
@@ -763,101 +741,130 @@ hr {
       <!-- SOCIALS PAGE -->
       <!-- ================================================= -->
 
-      <div
-        id="page-socials"
-        class="site-page"
-      >
+      <div id="page-socials" class="site-page">
 
         <h2>
-          Daan Tech on the Internet
+          Welcome on the SOCIALS tab!
         </h2>
 
+        <div class="social-intro">
+          Here you can find all the links to all my socials.
+          Feel free to follow Daan Tech around the World Wide Web!
+        </div>
 
-        <p>
-          Welcome to the official Daan Tech social links page.
-        </p>
+        <hr class="social-separator">
 
+        <div class="social-item">
 
-        <p>
-          You can find Daan Tech elsewhere on the World Wide Web.
-          Click one of the links below to leave this website.
-        </p>
+          <div class="social-name">
+            TikTok
+          </div>
 
+          <div class="social-handle">
+            (@daan_tech1)
+          </div>
 
-        <hr>
+          <p>
+            <a
+              href="https://www.tiktok.com/@daan_tech1?_t=8s6jd25uwni&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Daan Tech (@daan_tech1) | TikTok
+            </a>
+          </p>
 
+        </div>
 
-        <h3>
-          YouTube
-        </h3>
+        <hr class="social-separator">
 
-        <p>
-          Technology videos, strange experiments,
-          artificial intelligence, computers and unusual gadgets.
-        </p>
+        <div class="social-item">
 
-        <p>
-          <a href="#" target="_blank">
-            Visit Daan Tech on YouTube
-          </a>
-        </p>
+          <div class="social-name">
+            YouTube
+          </div>
 
+          <div class="social-handle">
+            (@daan_tech1)
+          </div>
 
-        <hr>
+          <p>
+            <a
+              href="https://www.youtube.com/@daan_tech1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Daan Tech - YouTube
+            </a>
+          </p>
 
+        </div>
 
-        <h3>
-          Instagram
-        </h3>
+        <hr class="social-separator">
 
-        <p>
-          Photos, short videos and behind-the-scenes looks
-          at Daan Tech projects.
-        </p>
+        <div class="social-item">
 
-        <p>
-          <a href="#" target="_blank">
-            Visit Daan Tech on Instagram
-          </a>
-        </p>
+          <div class="social-name">
+            Twitch
+          </div>
 
+          <div class="social-handle">
+            (@daan_tech1)
+          </div>
 
-        <hr>
+          <p class="coming-soon">
+            COMING BACK SOON
+          </p>
 
+        </div>
 
-        <h3>
-          TikTok
-        </h3>
+        <hr class="social-separator">
 
-        <p>
-          Short technology videos transmitted electronically
-          through the Internet.
-        </p>
+        <div class="social-item">
 
-        <p>
-          <a href="#" target="_blank">
-            Visit Daan Tech on TikTok
-          </a>
-        </p>
+          <div class="social-name">
+            GitHub
+          </div>
 
+          <div class="social-handle">
+            (@daan_tech1)
+          </div>
 
-        <hr>
+          <p>
+            <a
+              href="https://github.com/daantech1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              daantech1 (Daan Tech)
+            </a>
+          </p>
 
+        </div>
 
-        <h3>
-          X / Twitter
-        </h3>
+        <hr class="social-separator">
 
-        <p>
-          Project updates, random technology thoughts
-          and other Internet messages.
-        </p>
+        <div class="social-item">
 
-        <p>
-          <a href="#" target="_blank">
-            Visit Daan Tech on X
-          </a>
-        </p>
+          <div class="social-name">
+            Thingiverse
+          </div>
+
+          <div class="social-handle">
+            (@daan_tech1)
+          </div>
+
+          <p>
+            <a
+              href="https://www.thingiverse.com/daan_tech1/designs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Designs - daan_tech1 - Thingiverse
+            </a>
+          </p>
+
+        </div>
 
       </div>
 
@@ -866,20 +873,15 @@ hr {
       <!-- PROJECTS PAGE -->
       <!-- ================================================= -->
 
-      <div
-        id="page-projects"
-        class="site-page"
-      >
+      <div id="page-projects" class="site-page">
 
         <h2>
           Daan Tech Projects
         </h2>
 
-
         <p>
           Welcome to the Daan Tech project archive.
         </p>
-
 
         <p>
           Here you can find Internet experiments, software,
@@ -887,126 +889,87 @@ hr {
           things created or tested by Daan Tech.
         </p>
 
-
         <hr>
-
 
         <h3>
           Internet Experiment #01
-
-          <span class="new blink">
-            NEW!
-          </span>
+          <span class="new blink">NEW!</span>
         </h3>
-
 
         <p>
           <b>Status:</b>
-
-          <span class="project-progress">
-            IN PROGRESS
-          </span>
+          <span class="project-progress">IN PROGRESS</span>
         </p>
-
 
         <p>
           A strange browser experiment combining early Internet
           ideas with modern technology.
         </p>
 
-
         <p>
           This experiment is currently under construction.
           More information will be published when it is ready.
         </p>
 
-
-        <a
-          href="javascript:alert('This project is still under construction!');"
-        >
+        <a href="javascript:alert('This project is still under construction!');">
           More information...
         </a>
 
-
         <hr>
-
 
         <h3>
           AI Playground
         </h3>
 
-
         <p>
           <b>Status:</b>
-
-          <span class="project-progress">
-            TESTING
-          </span>
+          <span class="project-progress">TESTING</span>
         </p>
-
 
         <p>
           Experiments involving artificial intelligence,
           automation, generated media and new AI tools.
         </p>
 
-
-        <a
-          href="javascript:alert('AI Playground page coming soon!');"
-        >
+        <a href="javascript:alert('AI Playground page coming soon!');">
           More information...
         </a>
 
-
         <hr>
-
 
         <h3>
           Old Tech Lab
         </h3>
 
-
         <p>
           <b>Status:</b>
-
-          <span class="project-active">
-            ACTIVE
-          </span>
+          <span class="project-active">ACTIVE</span>
         </p>
-
 
         <p>
           Old computers, obsolete software, vintage hardware,
           forgotten gadgets and other pieces of technology.
         </p>
 
-
-        <a
-          href="javascript:alert('Old Tech Lab page coming soon!');"
-        >
+        <a href="javascript:alert('Old Tech Lab page coming soon!');">
           Enter the Old Tech Lab...
         </a>
 
-
         <hr>
-
 
         <h3>
           Code Drawer
         </h3>
-
 
         <p>
           <b>Status:</b>
           COMING SOON
         </p>
 
-
         <p>
           Small programs, scripts, browser tools and coding
           experiments made for fun.
         </p>
-
 
         <div class="download-box">
 
@@ -1014,12 +977,10 @@ hr {
             DOWNLOAD AREA
           </div>
 
-
           <p>
             Small programs, source files and experimental
             downloads may appear here in the future.
           </p>
-
 
           <a
             href="javascript:alert('No downloads are available yet. Please check back later!');"
@@ -1037,35 +998,26 @@ hr {
       <!-- CONTACT PAGE -->
       <!-- ================================================= -->
 
-      <div
-        id="page-contact"
-        class="site-page"
-      >
+      <div id="page-contact" class="site-page">
 
         <h2>
           Contact Daan Tech
         </h2>
-
 
         <p>
           Want to talk about technology, send an interesting gadget,
           suggest a weird project or discuss a collaboration?
         </p>
 
-
         <p>
           You can contact Daan Tech by electronic mail.
         </p>
 
-
         <hr>
-
 
         <div class="contact-box">
 
-          <b>
-            E-MAIL DAAN TECH
-          </b>
+          <b>E-MAIL DAAN TECH</b>
 
           <br><br>
 
@@ -1079,33 +1031,26 @@ hr {
 
         </div>
 
-
         <p>
-
           <a
             href="mailto:hello@daantech.example"
             class="old-button"
           >
             SEND E-MAIL
           </a>
-
         </p>
 
-
         <hr>
-
 
         <h3>
           Business / Collaborations
         </h3>
-
 
         <p>
           For collaborations, technology projects, product ideas
           or other business inquiries, please use the e-mail
           address above.
         </p>
-
 
         <p class="tiny">
           Please allow approximately 3-5 Internet business days
@@ -1117,11 +1062,6 @@ hr {
     </div>
 
   </div>
-
-
-  <!-- ===================================================== -->
-  <!-- FOOTER -->
-  <!-- ===================================================== -->
 
   <div class="footer">
 
@@ -1150,6 +1090,61 @@ hr {
 </div>
 
 
+<!-- ======================================================= -->
+<!-- SOCIALS POPUP -->
+<!-- ======================================================= -->
+
+<div id="socialPopup" class="social-popup">
+
+  <div class="social-popup-title">
+
+    DAAN TECH INTERNET MESSAGE
+
+    <button
+      class="popup-close"
+      onclick="closeSocialPopup();"
+      aria-label="Close"
+    >
+      X
+    </button>
+
+  </div>
+
+  <div class="social-popup-content">
+
+    <p>
+      <b>Hey Internet visitor!</b>
+    </p>
+
+    <p>
+      Are you already following Daan Tech on social media?
+    </p>
+
+    <div class="popup-buttons">
+
+      <button
+        class="old-button"
+        onclick="openSocialsFromPopup();"
+      >
+        SOCIALS
+      </button>
+
+      &nbsp;
+
+      <button
+        class="old-button"
+        onclick="closeSocialPopup();"
+      >
+        CLOSE
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
 <script>
 
 /* ========================================================= */
@@ -1161,23 +1156,18 @@ function showPage(pageName) {
   var pages =
     document.getElementsByClassName("site-page");
 
-
   for (var i = 0; i < pages.length; i++) {
     pages[i].style.display = "none";
   }
 
-
   var selectedPage =
     document.getElementById("page-" + pageName);
-
 
   if (selectedPage) {
     selectedPage.style.display = "block";
   }
 
-
   window.scrollTo(0, 0);
-
 }
 
 
@@ -1190,22 +1180,14 @@ function updateVisitorCounter() {
   var storedCount =
     localStorage.getItem("daanTechVisitorCount");
 
-
   if (storedCount === null) {
-
     storedCount = 4821;
-
   } else {
-
-    storedCount =
-      parseInt(storedCount, 10);
-
+    storedCount = parseInt(storedCount, 10);
   }
-
 
   var visitedBefore =
     sessionStorage.getItem("daanTechVisited");
-
 
   if (!visitedBefore) {
 
@@ -1223,10 +1205,8 @@ function updateVisitorCounter() {
 
   }
 
-
   var counter =
     document.getElementById("visitorCounter");
-
 
   if (counter) {
 
@@ -1234,6 +1214,43 @@ function updateVisitorCounter() {
       String(storedCount).padStart(6, "0");
 
   }
+
+}
+
+
+/* ========================================================= */
+/* SOCIAL POPUP */
+/* ========================================================= */
+
+function showSocialPopup() {
+
+  var popup =
+    document.getElementById("socialPopup");
+
+  if (popup) {
+    popup.style.display = "block";
+  }
+
+}
+
+
+function closeSocialPopup() {
+
+  var popup =
+    document.getElementById("socialPopup");
+
+  if (popup) {
+    popup.style.display = "none";
+  }
+
+}
+
+
+function openSocialsFromPopup() {
+
+  closeSocialPopup();
+
+  showPage("socials");
 
 }
 
@@ -1247,6 +1264,14 @@ window.onload = function() {
   showPage("home");
 
   updateVisitorCounter();
+
+  /*
+    Show the social popup 5 seconds after opening the website.
+  */
+
+  setTimeout(function() {
+    showSocialPopup();
+  }, 5000);
 
 };
 
