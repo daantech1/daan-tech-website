@@ -1,1 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 
+<meta name="description" content="Official retro homepage of Daan Tech">
+<meta name="keywords" content="Daan Tech, technology, coding, AI, retro computers, projects, internet experiments">
+<meta name="author" content="Daan Tech">
+
+<title>Daan Tech - Official Homepage</title>
+
+<style>
+
+/* ========================================================= */
+/* BASIC PAGE */
+/* ========================================================= */
+
+body {
+  background: #d6d2c4;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  color: #111111;
+  font-size: 14px;
+}
+
+a:link {
+  color: #0000cc;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+a:hover {
+  color: #cc0000;
+  background: #ffff99;
+}
+
+.page {
+  width: 760px;
+  margin: 12px auto;
+  background: #fffbe8;
+  border: 2px solid #777777;
+}
+
+
+/* ========================================================= */
+/* TOP BAR */
+/* ========================================================= */
+
+.topbar {
+  background: #003366;
+  color: white;
+  padding: 5px 8px;
+  font-size: 12px;
+  text-align: right;
+}
+
+
+/* ========================================================= */
+/* HEADER */
+/* ========================================================= */
+
+.header {
+  background: linear-gradient(#e8e8c8, #c8c896);
+  border-bottom: 2px solid #777777;
+  padding: 14px;
+  text-align: center;
+}
+
+.header h1 {
+  color: #003366;
+  margin: 0;
+  font-size: 32px;
+  text-shadow: 1px 1px white;
+}
+
+.header p {
+  margin: 4px 0 0;
+  font-style: italic;
+}
+
+
+/* ========================================================= */
+/* MARQUEE */
+/* ========================================================= */
+
+marquee {
+  display: block;
+  background: #ffffcc;
+  color: #990000;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 3px;
+}
+
+
+/* ========================================================= */
+/* NAVIGATION */
+/* ========================================================= */
+
+.nav {
+  background: #999966;
+  text-align: center;
+  padding: 6px;
+  border-bottom: 1px solid #555555;
+}
+
+.nav a {
+  color: #000066;
+  font-weight: bold;
+  margin: 0 18px;
+  text-decoration: underline;
+}
+
+.nav a:hover {
+  color: #990000;
+  background: #ffff99;
+}
+
+
+/* ========================================================= */
+/* MAIN LAYOUT */
+/* ========================================================= */
+
+.layout {
+  display: table;
+  width: 100%;
+}
+
+.sidebar {
+  display: table-cell;
+  width: 170px;
+  background: #ece8c9;
+  border-right: 1px solid #999999;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.content {
+  display: table-cell;
+  padding: 15px;
+  vertical-align: top;
+}
+
+
+/* ========================================================= */
+/* SIDEBAR BOXES */
+/* ========================================================= */
+
+.box {
+  border: 1px solid #999999;
+  background: white;
+  margin-bottom: 12px;
+}
+
+.box-title {
+  background: #003366;
+  color: white;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.box-content {
+  padding: 7px;
+}
+
+.box-content p {
+  margin: 4px 0;
+}
+
+.site-links a {
+  display: block;
+  padding: 2px 0;
+}
+
+
+/* ========================================================= */
+/* VISITOR COUNTER */
+/* ========================================================= */
+
+.counter-wrap {
+  text-align: center;
+}
+
+.counter {
+  background: black;
+  color: #00ff00;
+  font-family: "Courier New", Courier, monospace;
+  display: inline-block;
+  padding: 2px 6px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border: 2px inset #aaaaaa;
+}
+
+
+/* ========================================================= */
+/* MAIN PHOTO */
+/* ========================================================= */
+
+.old-photo {
+  width: 100%;
+  height: 210px;
+  background: #cccccc;
+  border: 1px solid #333333;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #555555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================================= */
+/* HEADINGS */
+/* ========================================================= */
+
+h2 {
+  margin-top: 11px;
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+
+/* ========================================================= */
+/* TEXT */
+/* ========================================================= */
+
+p {
+  line-height: 16px;
+}
+
+
+/* ========================================================= */
+/* NEW LABEL */
+/* ========================================================= */
+
+.new {
+  color: red;
+  font-weight: bold;
+}
+
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+
+/* ========================================================= */
+/* NOTICE */
+/* ========================================================= */
+
+.notice {
+  background: #ffffcc;
+  border: 1px solid #999966;
+  padding: 6px;
+  margin: 10px 0;
+  font-size: 13px;
+}
+
+
+/* ========================================================= */
+/* PROJECT STATUS */
+/* ========================================================= */
+
+.project-active {
+  color: #007000;
+  font-weight: bold;
+}
+
+.project-progress {
+  color: #996000;
+  font-weight: bold;
+}
+
+
+/* ========================================================= */
+/* OLD WINDOWS BUTTON */
+/* ========================================================= */
+
+.old-button {
+  display: inline-block;
+
+  background: #d4d0c8;
+  color: #000000 !important;
+  text-decoration: none !important;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+
+  padding: 2px 7px;
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #555555;
+  border-bottom: 2px solid #555555;
+}
+
+.old-button:hover {
+  background: #eeeeee;
+}
+
+.old-button:active {
+  border-top: 2px solid #555555;
+  border-left: 2px solid #555555;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+
+/* ========================================================= */
+/* DOWNLOAD BOX */
+/* ========================================================= */
+
+.download-box {
+  border: 1px solid #888888;
+  background: #eeeeee;
+  padding: 7px;
+  margin-top: 12px;
+}
+
+.download-title {
+  font-weight: bold;
+  color: #003366;
+}
+
+
+/* ========================================================= */
+/* CONTACT BOX */
+/* ========================================================= */
+
+.contact-box {
+  background: #eeeeee;
+  border: 1px dashed #777777;
+  padding: 8px;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+}
+
+
+/* ========================================================= */
+/* HORIZONTAL LINE */
+/* ========================================================= */
+
+hr {
+  border: 0;
+  border-top: 1px solid #999999;
+  margin: 14px 0;
+}
+
+
+/* ========================================================= */
+/* SMALL TEXT */
+/* ========================================================= */
+
+.tiny {
+  font-size: 11px;
+}
+
+
+/* ========================================================= */
+/* PAGE SWITCHING */
+/* ========================================================= */
+
+.site-page {
+  display: none;
+}
+
+#page-home {
+  display: block;
+}
+
+
+/* ========================================================= */
+/* FOOTER */
+/* ========================================================= */
+
+.footer {
+  border-top: 1px solid #777777;
+  text-align: center;
+  font-size: 11px;
+  padding: 12px;
+  background: #ddd9ba;
+  line-height: 15px;
+}
+
+
+/* ========================================================= */
+/* INTENTIONALLY OLD-SCHOOL FIXED WIDTH */
+/* ========================================================= */
+
+@media screen and (max-width: 780px) {
+
+  body {
+    min-width: 780px;
+  }
+
+  .page {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+  <!-- ===================================================== -->
+  <!-- TOP BAR -->
+  <!-- ===================================================== -->
+
+  <div class="topbar">
+    Official Daan Tech Homepage
+    &nbsp; | &nbsp;
+    Last updated: 5 September 2026
+  </div>
+
+
+  <!-- ===================================================== -->
+  <!-- HEADER -->
+  <!-- ===================================================== -->
+
+  <div class="header">
+
+    <h1>
+      WELCOME TO DAAN TECH
+    </h1>
+
+    <p>
+      Technology, experiments &amp; strange things from the Internet
+    </p>
+
+  </div>
+
+
+  <!-- ===================================================== -->
+  <!-- MARQUEE -->
+  <!-- ===================================================== -->
+
+  <marquee scrollamount="3">
+    ★ WELCOME TO DAAN TECH ★
+    NEW PROJECTS COMING SOON ★
+    AI EXPERIMENTS ★
+    OLD COMPUTERS ★
+    CODE ★
+    INTERNET STUFF ★
+  </marquee>
+
+
+  <!-- ===================================================== -->
+  <!-- NAVIGATION -->
+  <!-- ===================================================== -->
+
+  <div class="nav">
+
+    <a
+      href="#"
+      onclick="showPage('home'); return false;"
+    >
+      HOME
+    </a>
+
+    <a
+      href="#"
+      onclick="showPage('socials'); return false;"
+    >
+      SOCIALS
+    </a>
+
+    <a
+      href="#"
+      onclick="showPage('projects'); return false;"
+    >
+      PROJECTS
+    </a>
+
+    <a
+      href="#"
+      onclick="showPage('contact'); return false;"
+    >
+      CONTACT
+    </a>
+
+  </div>
+
+
+  <!-- ===================================================== -->
+  <!-- MAIN LAYOUT -->
+  <!-- ===================================================== -->
+
+  <div class="layout">
+
+
+    <!-- =================================================== -->
+    <!-- LEFT SIDEBAR -->
+    <!-- =================================================== -->
+
+    <div class="sidebar">
+
+
+      <!-- LATEST PROJECT -->
+
+      <div class="box">
+
+        <div class="box-title">
+          LATEST PROJECT
+        </div>
+
+        <div class="box-content">
+
+          <span class="new blink">
+            NEW!
+          </span>
+
+          <br>
+
+          <b>
+            Internet Experiment #01
+          </b>
+
+          <p>
+            A strange new web experiment involving old Internet
+            design and modern technology.
+          </p>
+
+          <a
+            href="#"
+            onclick="showPage('projects'); return false;"
+          >
+            Read more...
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- VISITOR COUNTER -->
+
+      <div class="box">
+
+        <div class="box-title">
+          VISITOR COUNTER
+        </div>
+
+        <div class="box-content counter-wrap">
+
+          You are visitor
+
+          <br><br>
+
+          <span
+            class="counter"
+            id="visitorCounter"
+          >
+            004821
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUICK LINKS -->
+
+      <div class="box">
+
+        <div class="box-title">
+          QUICK LINKS
+        </div>
+
+        <div class="box-content site-links">
+
+          <a
+            href="#"
+            onclick="showPage('home'); return false;"
+          >
+            Home Page
+          </a>
+
+          <a
+            href="#"
+            onclick="showPage('projects'); return false;"
+          >
+            Latest Projects
+          </a>
+
+          <a
+            href="#"
+            onclick="showPage('socials'); return false;"
+          >
+            YouTube
+          </a>
+
+          <a
+            href="#"
+            onclick="showPage('socials'); return false;"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="#"
+            onclick="showPage('socials'); return false;"
+          >
+            TikTok
+          </a>
+
+          <a
+            href="#"
+            onclick="showPage('contact'); return false;"
+          >
+            Send E-Mail
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================== -->
+    <!-- MAIN CONTENT -->
+    <!-- =================================================== -->
+
+    <div class="content">
+
+
+      <!-- ================================================= -->
+      <!-- HOME PAGE -->
+      <!-- ================================================= -->
+
+      <div
+        id="page-home"
+        class="site-page"
+      >
+
+        <h2>
+          Welcome to Daan Tech!
+        </h2>
+
+
+        <div class="old-photo">
+          [ daan_tech_main_photo.jpg ]
+        </div>
+
+
+        <p>
+          Welcome to the official retro website of
+          <b>Daan Tech!</b>
+        </p>
+
+
+        <p>
+          Daan Tech is all about technology, weird Internet experiments,
+          coding, projects, artificial intelligence, old technology and
+          fun tech ideas.
+        </p>
+
+
+        <p>
+          This website is my small corner of the World Wide Web where I
+          collect experiments, strange computer projects, coding ideas,
+          technology videos and other digital things that I find interesting.
+        </p>
+
+
+        <p>
+          You may find old computers, new AI tools, unusual software,
+          browser experiments, programming projects, hardware, obscure
+          Internet discoveries and things that probably did not need to exist.
+        </p>
+
+
+        <p>
+          Whether you arrived here intentionally or accidentally clicked
+          the wrong hyperlink, welcome!
+        </p>
+
+
+        <div class="notice">
+
+          <b>NOTICE:</b>
+
+          This website may contain unfinished projects, strange HTML,
+          experimental technology, broken links and unnecessary amounts
+          of enthusiasm about computers.
+
+        </div>
+
+
+        <hr>
+
+
+        <!-- LATEST NEWS -->
+
+        <h3>
+          Latest News
+        </h3>
+
+
+        <p>
+          <b>05.09.2026</b>
+          -
+          The official Daan Tech homepage is now online.
+        </p>
+
+
+        <p>
+          <b>02.09.2026</b>
+          -
+          Work has started on several new technology and Internet experiments.
+        </p>
+
+
+        <p>
+          <b>28.08.2026</b>
+          -
+          New AI experiments are currently being tested.
+        </p>
+
+
+        <p>
+          <span class="new blink">
+            NEW!
+          </span>
+
+          New projects, videos and strange Internet things will be added soon.
+        </p>
+
+      </div>
+
+
+      <!-- ================================================= -->
+      <!-- SOCIALS PAGE -->
+      <!-- ================================================= -->
+
+      <div
+        id="page-socials"
+        class="site-page"
+      >
+
+        <h2>
+          Daan Tech on the Internet
+        </h2>
+
+
+        <p>
+          Welcome to the official Daan Tech social links page.
+        </p>
+
+
+        <p>
+          You can find Daan Tech elsewhere on the World Wide Web.
+          Click one of the links below to leave this website.
+        </p>
+
+
+        <hr>
+
+
+        <h3>
+          YouTube
+        </h3>
+
+        <p>
+          Technology videos, strange experiments,
+          artificial intelligence, computers and unusual gadgets.
+        </p>
+
+        <p>
+          <a
+            href="#"
+            target="_blank"
+          >
+            Visit Daan Tech on YouTube
+          </a>
+        </p>
+
+
+        <hr>
+
+
+        <h3>
+          Instagram
+        </h3>
+
+        <p>
+          Photos, short videos and behind-the-scenes looks
+          at Daan Tech projects.
+        </p>
+
+        <p>
+          <a
+            href="#"
+            target="_blank"
+          >
+            Visit Daan Tech on Instagram
+          </a>
+        </p>
+
+
+        <hr>
+
+
+        <h3>
+          TikTok
+        </h3>
+
+        <p>
+          Short technology videos transmitted electronically
+          through the Internet.
+        </p>
+
+        <p>
+          <a
+            href="#"
+            target="_blank"
+          >
+            Visit Daan Tech on TikTok
+          </a>
+        </p>
+
+
+        <hr>
+
+
+        <h3>
+          X / Twitter
+        </h3>
+
+        <p>
+          Project updates, random technology thoughts
+          and other Internet messages.
+        </p>
+
+        <p>
+          <a
+            href="#"
+            target="_blank"
+          >
+            Visit Daan Tech on X
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- ================================================= -->
+      <!-- PROJECTS PAGE -->
+      <!-- ================================================= -->
+
+      <div
+        id="page-projects"
+        class="site-page"
+      >
+
+        <h2>
+          Daan Tech Projects
+        </h2>
+
+
+        <p>
+          Welcome to the Daan Tech project archive.
+        </p>
+
+
+        <p>
+          Here you can find Internet experiments, software,
+          artificial intelligence, old technology and other
+          things created or tested by Daan Tech.
+        </p>
+
+
+        <hr>
+
+
+        <h3>
+          Internet Experiment #01
+
+          <span class="new blink">
+            NEW!
+          </span>
+        </h3>
+
+
+        <p>
+          <b>Status:</b>
+
+          <span class="project-progress">
+            IN PROGRESS
+          </span>
+        </p>
+
+
+        <p>
+          A strange browser experiment combining early Internet
+          ideas with modern technology.
+        </p>
+
+
+        <p>
+          This experiment is currently under construction.
+          More information will be published when it is ready.
+        </p>
+
+
+        <a
+          href="javascript:alert('This project is still under construction!');"
+        >
+          More information...
+        </a>
+
+
+        <hr>
+
+
+        <h3>
+          AI Playground
+        </h3>
+
+
+        <p>
+          <b>Status:</b>
+
+          <span class="project-progress">
+            TESTING
+          </span>
+        </p>
+
+
+        <p>
+          Experiments involving artificial intelligence,
+          automation, generated media and new AI tools.
+        </p>
+
+
+        <a
+          href="javascript:alert('AI Playground page coming soon!');"
+        >
+          More information...
+        </a>
+
+
+        <hr>
+
+
+        <h3>
+          Old Tech Lab
+        </h3>
+
+
+        <p>
+          <b>Status:</b>
+
+          <span class="project-active">
+            ACTIVE
+          </span>
+        </p>
+
+
+        <p>
+          Old computers, obsolete software, vintage hardware,
+          forgotten gadgets and other pieces of technology.
+        </p>
+
+
+        <a
+          href="javascript:alert('Old Tech Lab page coming soon!');"
+        >
+          Enter the Old Tech Lab...
+        </a>
+
+
+        <hr>
+
+
+        <h3>
+          Code Drawer
+        </h3>
+
+
+        <p>
+          <b>Status:</b>
+          COMING SOON
+        </p>
+
+
+        <p>
+          Small programs, scripts, browser tools and coding
+          experiments made for fun.
+        </p>
+
+
+        <div class="download-box">
+
+          <div class="download-title">
+            DOWNLOAD AREA
+          </div>
+
+
+          <p>
+            Small programs, source files and experimental
+            downloads may appear here in the future.
+          </p>
+
+
+          <a
+            href="javascript:alert('No downloads are available yet. Please check back later!');"
+            class="old-button"
+          >
+            DOWNLOADS
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================================================= -->
+      <!-- CONTACT PAGE -->
+      <!-- ================================================= -->
+
+      <div
+        id="page-contact"
+        class="site-page"
+      >
+
+        <h2>
+          Contact Daan Tech
+        </h2>
+
+
+        <p>
+          Want to talk about technology, send an interesting gadget,
+          suggest a weird project or discuss a collaboration?
+        </p>
+
+
+        <p>
+          You can contact Daan Tech by electronic mail.
+        </p>
+
+
+        <hr>
+
+
+        <div class="contact-box">
+
+          <b>
+            E-MAIL DAAN TECH
+          </b>
+
+          <br><br>
+
+          General inquiries:
+
+          <br>
+
+          <a href="mailto:hello@daantech.example">
+            hello@daantech.example
+          </a>
+
+        </div>
+
+
+        <p>
+
+          <a
+            href="mailto:hello@daantech.example"
+            class="old-button"
+          >
+            SEND E-MAIL
+          </a>
+
+        </p>
+
+
+        <hr>
+
+
+        <h3>
+          Business / Collaborations
+        </h3>
+
+
+        <p>
+          For collaborations, technology projects, product ideas
+          or other business inquiries, please use the e-mail
+          address above.
+        </p>
+
+
+        <p class="tiny">
+          Please allow approximately 3-5 Internet business days
+          for your electronic message to travel through cyberspace.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ===================================================== -->
+  <!-- FOOTER -->
+  <!-- ===================================================== -->
+
+  <div class="footer">
+
+    © 2026 Daan Tech
+
+    <br><br>
+
+    Best viewed on a computer connected to the Internet.
+
+    <br>
+
+    Recommended resolution:
+    800 × 600 or higher
+
+    <br>
+
+    Compatible with Microsoft Internet Explorer,
+    Netscape Navigator and possibly your current browser.
+
+    <br>
+
+    This website uses no cookies.
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* ========================================================= */
+/* PAGE NAVIGATION */
+/* ========================================================= */
+
+function showPage(pageName) {
+
+  var pages =
+    document.getElementsByClassName("site-page");
+
+
+  for (var i = 0; i < pages.length; i++) {
+    pages[i].style.display = "none";
+  }
+
+
+  var selectedPage =
+    document.getElementById("page-" + pageName);
+
+
+  if (selectedPage) {
+    selectedPage.style.display = "block";
+  }
+
+
+  window.scrollTo(0, 0);
+
+}
+
+
+/* ========================================================= */
+/* VISITOR COUNTER */
+/* ========================================================= */
+
+function updateVisitorCounter() {
+
+  var storedCount =
+    localStorage.getItem("daanTechVisitorCount");
+
+
+  if (storedCount === null) {
+    storedCount = 4821;
+  } else {
+    storedCount = parseInt(storedCount, 10);
+  }
+
+
+  var visitedBefore =
+    sessionStorage.getItem("daanTechVisited");
+
+
+  if (!visitedBefore) {
+
+    storedCount++;
+
+    localStorage.setItem(
+      "daanTechVisitorCount",
+      storedCount
+    );
+
+    sessionStorage.setItem(
+      "daanTechVisited",
+      "yes"
+    );
+
+  }
+
+
+  var counter =
+    document.getElementById("visitorCounter");
+
+
+  if (counter) {
+    counter.innerText =
+      String(storedCount).padStart(6, "0");
+  }
+
+}
+
+
+/* ========================================================= */
+/* START WEBSITE */
+/* ========================================================= */
+
+window.onload = function() {
+
+  /*
+    The website always starts on HOME.
+
+    HOME only shows:
+    - Welcome to Daan Tech
+    - Latest News
+
+    The sidebar now only contains:
+    - Latest Project
+    - Visitor Counter
+    - Quick Links
+  */
+
+  showPage("home");
+
+  updateVisitorCounter();
+
+};
+
+</script>
+
+</body>
+</html>
