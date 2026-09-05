@@ -196,22 +196,18 @@ marquee {
 
 
 /* ========================================================= */
-/* MAIN PHOTO */
+/* HOME PICTURE */
 /* ========================================================= */
 
-.old-photo {
+.home-picture {
   width: 100%;
   height: 210px;
+  display: block;
+
+  object-fit: cover;
+
   background: #cccccc;
   border: 1px solid #333333;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: #555555;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
 
   box-sizing: border-box;
 }
@@ -663,9 +659,18 @@ hr {
         </h2>
 
 
-        <div class="old-photo">
-          [ daan_tech_main_photo.jpg ]
-        </div>
+        <!--
+          Put this file in the SAME GitHub repository/folder
+          as index.html:
+
+          daan-home-picture-wallpaper.jpg
+        -->
+
+        <img
+          src="daan-home-picture-wallpaper.jpg"
+          alt="Daan Tech"
+          class="home-picture"
+        >
 
 
         <p>
@@ -792,10 +797,7 @@ hr {
         </p>
 
         <p>
-          <a
-            href="#"
-            target="_blank"
-          >
+          <a href="#" target="_blank">
             Visit Daan Tech on YouTube
           </a>
         </p>
@@ -814,10 +816,7 @@ hr {
         </p>
 
         <p>
-          <a
-            href="#"
-            target="_blank"
-          >
+          <a href="#" target="_blank">
             Visit Daan Tech on Instagram
           </a>
         </p>
@@ -836,10 +835,7 @@ hr {
         </p>
 
         <p>
-          <a
-            href="#"
-            target="_blank"
-          >
+          <a href="#" target="_blank">
             Visit Daan Tech on TikTok
           </a>
         </p>
@@ -858,10 +854,7 @@ hr {
         </p>
 
         <p>
-          <a
-            href="#"
-            target="_blank"
-          >
+          <a href="#" target="_blank">
             Visit Daan Tech on X
           </a>
         </p>
@@ -1199,9 +1192,14 @@ function updateVisitorCounter() {
 
 
   if (storedCount === null) {
+
     storedCount = 4821;
+
   } else {
-    storedCount = parseInt(storedCount, 10);
+
+    storedCount =
+      parseInt(storedCount, 10);
+
   }
 
 
@@ -1231,8 +1229,10 @@ function updateVisitorCounter() {
 
 
   if (counter) {
+
     counter.innerText =
       String(storedCount).padStart(6, "0");
+
   }
 
 }
@@ -1243,19 +1243,6 @@ function updateVisitorCounter() {
 /* ========================================================= */
 
 window.onload = function() {
-
-  /*
-    The website always starts on HOME.
-
-    HOME only shows:
-    - Welcome to Daan Tech
-    - Latest News
-
-    The sidebar now only contains:
-    - Latest Project
-    - Visitor Counter
-    - Quick Links
-  */
 
   showPage("home");
 
