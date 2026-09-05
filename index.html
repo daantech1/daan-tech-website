@@ -12,7 +12,7 @@
 <style>
 
 /* ========================================================= */
-/* BASIC PAGE */
+/* BASIC PAGE                                                */
 /* ========================================================= */
 
 body {
@@ -46,7 +46,7 @@ a:hover {
 
 
 /* ========================================================= */
-/* TOP BAR */
+/* TOP BAR                                                   */
 /* ========================================================= */
 
 .topbar {
@@ -59,7 +59,7 @@ a:hover {
 
 
 /* ========================================================= */
-/* HEADER */
+/* HEADER                                                    */
 /* ========================================================= */
 
 .header {
@@ -83,7 +83,7 @@ a:hover {
 
 
 /* ========================================================= */
-/* MARQUEE */
+/* MARQUEE                                                   */
 /* ========================================================= */
 
 marquee {
@@ -96,7 +96,7 @@ marquee {
 
 
 /* ========================================================= */
-/* NAVIGATION */
+/* NAVIGATION                                                */
 /* ========================================================= */
 
 .nav {
@@ -120,7 +120,7 @@ marquee {
 
 
 /* ========================================================= */
-/* MAIN LAYOUT */
+/* MAIN LAYOUT                                               */
 /* ========================================================= */
 
 .layout {
@@ -145,7 +145,7 @@ marquee {
 
 
 /* ========================================================= */
-/* SIDEBAR BOXES */
+/* SIDEBAR BOXES                                             */
 /* ========================================================= */
 
 .box {
@@ -166,7 +166,7 @@ marquee {
 }
 
 .box-content p {
-  margin: 4px 0;
+  margin: 5px 0;
 }
 
 .site-links a {
@@ -176,7 +176,7 @@ marquee {
 
 
 /* ========================================================= */
-/* VISITOR COUNTER */
+/* VISITOR COUNTER                                           */
 /* ========================================================= */
 
 .counter-wrap {
@@ -196,7 +196,7 @@ marquee {
 
 
 /* ========================================================= */
-/* HOME PICTURE */
+/* HOME IMAGE                                                */
 /* ========================================================= */
 
 .home-picture {
@@ -211,7 +211,7 @@ marquee {
 
 
 /* ========================================================= */
-/* HEADINGS */
+/* HEADINGS / TEXT                                           */
 /* ========================================================= */
 
 h2 {
@@ -221,13 +221,8 @@ h2 {
 
 h3 {
   font-size: 17px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
-
-
-/* ========================================================= */
-/* TEXT */
-/* ========================================================= */
 
 p {
   line-height: 16px;
@@ -235,7 +230,7 @@ p {
 
 
 /* ========================================================= */
-/* NEW LABEL */
+/* NEW LABEL                                                 */
 /* ========================================================= */
 
 .new {
@@ -255,7 +250,7 @@ p {
 
 
 /* ========================================================= */
-/* NOTICE */
+/* NOTICE                                                    */
 /* ========================================================= */
 
 .notice {
@@ -268,8 +263,67 @@ p {
 
 
 /* ========================================================= */
-/* PROJECT STATUS */
+/* NEWS                                                      */
 /* ========================================================= */
+
+.news-item {
+  margin-bottom: 11px;
+}
+
+.news-date {
+  font-weight: bold;
+}
+
+.news-title {
+  font-weight: bold;
+  color: #003366;
+}
+
+.news-item p {
+  margin: 4px 0;
+}
+
+
+/* ========================================================= */
+/* PROJECTS                                                  */
+/* ========================================================= */
+
+.project-block {
+  margin-bottom: 8px;
+}
+
+.project-block h3 {
+  color: #003366;
+  margin-bottom: 4px;
+}
+
+.project-date {
+  font-size: 11px;
+  color: #555555;
+}
+
+.project-picture {
+  width: 100%;
+  max-height: 250px;
+  display: block;
+  object-fit: cover;
+  border: 1px solid #555555;
+  margin: 7px 0 9px 0;
+  box-sizing: border-box;
+}
+
+.project-placeholder {
+  height: 135px;
+  border: 1px solid #777777;
+  background: #cccccc;
+  color: #555555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  margin: 7px 0 9px 0;
+}
 
 .project-active {
   color: #007000;
@@ -281,9 +335,14 @@ p {
   font-weight: bold;
 }
 
+.project-soon {
+  color: #990000;
+  font-weight: bold;
+}
+
 
 /* ========================================================= */
-/* OLD WINDOWS BUTTON */
+/* OLD WINDOWS BUTTON                                        */
 /* ========================================================= */
 
 .old-button {
@@ -314,37 +373,7 @@ p {
 
 
 /* ========================================================= */
-/* DOWNLOAD BOX */
-/* ========================================================= */
-
-.download-box {
-  border: 1px solid #888888;
-  background: #eeeeee;
-  padding: 7px;
-  margin-top: 12px;
-}
-
-.download-title {
-  font-weight: bold;
-  color: #003366;
-}
-
-
-/* ========================================================= */
-/* CONTACT BOX */
-/* ========================================================= */
-
-.contact-box {
-  background: #eeeeee;
-  border: 1px dashed #777777;
-  padding: 8px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 12px;
-}
-
-
-/* ========================================================= */
-/* SOCIALS PAGE */
+/* SOCIALS                                                   */
 /* ========================================================= */
 
 .social-intro {
@@ -382,7 +411,20 @@ p {
 
 
 /* ========================================================= */
-/* POPUP */
+/* CONTACT                                                   */
+/* ========================================================= */
+
+.contact-box {
+  background: #eeeeee;
+  border: 1px dashed #777777;
+  padding: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+}
+
+
+/* ========================================================= */
+/* SOCIAL POPUP                                              */
 /* ========================================================= */
 
 .social-popup {
@@ -395,7 +437,6 @@ p {
   border: 2px solid #333333;
   z-index: 9999;
   box-shadow: 3px 3px 0 #777777;
-  font-family: "Times New Roman", Times, serif;
 }
 
 .social-popup-title {
@@ -413,7 +454,7 @@ p {
   top: 3px;
   width: 18px;
   height: 18px;
-  line-height: 15px;
+  line-height: 14px;
   text-align: center;
   background: #d4d0c8;
   color: #000000;
@@ -450,7 +491,7 @@ p {
 
 
 /* ========================================================= */
-/* HORIZONTAL LINE */
+/* OTHER                                                     */
 /* ========================================================= */
 
 hr {
@@ -459,19 +500,9 @@ hr {
   margin: 14px 0;
 }
 
-
-/* ========================================================= */
-/* SMALL TEXT */
-/* ========================================================= */
-
 .tiny {
   font-size: 11px;
 }
-
-
-/* ========================================================= */
-/* PAGE SWITCHING */
-/* ========================================================= */
 
 .site-page {
   display: none;
@@ -483,7 +514,7 @@ hr {
 
 
 /* ========================================================= */
-/* FOOTER */
+/* FOOTER                                                    */
 /* ========================================================= */
 
 .footer {
@@ -497,7 +528,7 @@ hr {
 
 
 /* ========================================================= */
-/* OLD-SCHOOL FIXED WIDTH */
+/* INTENTIONALLY OLD-SCHOOL FIXED WIDTH                      */
 /* ========================================================= */
 
 @media screen and (max-width: 780px) {
@@ -520,16 +551,31 @@ hr {
 
 <div class="page">
 
+  <!-- TOP BAR -->
+
   <div class="topbar">
     Official Daan Tech Homepage
     &nbsp; | &nbsp;
     Last updated: 5 September 2026
   </div>
 
+
+  <!-- HEADER -->
+
   <div class="header">
-    <h1>WELCOME TO DAAN TECH</h1>
-    <p>Technology, experiments &amp; strange things from the Internet</p>
+
+    <h1>
+      WELCOME TO DAAN TECH
+    </h1>
+
+    <p>
+      Technology, experiments &amp; strange things from the Internet
+    </p>
+
   </div>
+
+
+  <!-- MOVING MESSAGE -->
 
   <marquee scrollamount="3">
     ★ WELCOME TO DAAN TECH ★
@@ -539,6 +585,9 @@ hr {
     CODE ★
     INTERNET STUFF ★
   </marquee>
+
+
+  <!-- NAVIGATION -->
 
   <div class="nav">
 
@@ -560,9 +609,20 @@ hr {
 
   </div>
 
+
+  <!-- MAIN LAYOUT -->
+
   <div class="layout">
 
+
+    <!-- =================================================== -->
+    <!-- SIDEBAR                                             -->
+    <!-- =================================================== -->
+
     <div class="sidebar">
+
+
+      <!-- LATEST PROJECT -->
 
       <div class="box">
 
@@ -570,26 +630,17 @@ hr {
           LATEST PROJECT
         </div>
 
-        <div class="box-content">
-
-          <span class="new blink">NEW!</span>
-
-          <br>
-
-          <b>Internet Experiment #01</b>
-
-          <p>
-            A strange new web experiment involving old Internet
-            design and modern technology.
-          </p>
-
-          <a href="#" onclick="showPage('projects'); return false;">
-            Read more...
-          </a>
-
+        <div
+          class="box-content"
+          id="latestProjectSidebar"
+        >
+          <!-- Inserted automatically -->
         </div>
 
       </div>
+
+
+      <!-- VISITOR COUNTER -->
 
       <div class="box">
 
@@ -603,13 +654,19 @@ hr {
 
           <br><br>
 
-          <span class="counter" id="visitorCounter">
+          <span
+            class="counter"
+            id="visitorCounter"
+          >
             004821
           </span>
 
         </div>
 
       </div>
+
+
+      <!-- QUICK LINKS -->
 
       <div class="box">
 
@@ -627,15 +684,27 @@ hr {
             Latest Projects
           </a>
 
-          <a href="https://www.youtube.com/@daan_tech1" target="_blank">
+          <a
+            href="https://www.youtube.com/@daan_tech1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             YouTube
           </a>
 
-          <a href="https://www.tiktok.com/@daan_tech1?_t=8s6jd25uwni&_r=1" target="_blank">
+          <a
+            href="https://www.tiktok.com/@daan_tech1?_t=8s6jd25uwni&_r=1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             TikTok
           </a>
 
-          <a href="https://github.com/daantech1" target="_blank">
+          <a
+            href="https://github.com/daantech1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </a>
 
@@ -649,10 +718,16 @@ hr {
 
     </div>
 
+
+    <!-- =================================================== -->
+    <!-- MAIN CONTENT                                        -->
+    <!-- =================================================== -->
+
     <div class="content">
 
+
       <!-- ================================================= -->
-      <!-- HOME PAGE -->
+      <!-- HOME                                              -->
       <!-- ================================================= -->
 
       <div id="page-home" class="site-page">
@@ -686,22 +761,16 @@ hr {
 
         <p>
           You may find old computers, new AI tools, unusual software,
-          browser experiments, programming projects, hardware, obscure
-          Internet discoveries and things that probably did not need to exist.
-        </p>
-
-        <p>
-          Whether you arrived here intentionally or accidentally clicked
-          the wrong hyperlink, welcome!
+          browser experiments, programming projects, hardware and
+          obscure Internet discoveries.
         </p>
 
         <div class="notice">
 
           <b>NOTICE:</b>
 
-          This website may contain unfinished projects, strange HTML,
-          experimental technology, broken links and unnecessary amounts
-          of enthusiasm about computers.
+          This website may contain unfinished projects,
+          experimental technology, broken links and strange HTML.
 
         </div>
 
@@ -711,34 +780,15 @@ hr {
           Latest News
         </h3>
 
-        <p>
-          <b>05.09.2026</b>
-          -
-          The official Daan Tech homepage is now online.
-        </p>
-
-        <p>
-          <b>02.09.2026</b>
-          -
-          Work has started on several new technology and Internet experiments.
-        </p>
-
-        <p>
-          <b>28.08.2026</b>
-          -
-          New AI experiments are currently being tested.
-        </p>
-
-        <p>
-          <span class="new blink">NEW!</span>
-          New projects, videos and strange Internet things will be added soon.
-        </p>
+        <div id="latestNews">
+          <!-- The 3 latest news items are inserted here -->
+        </div>
 
       </div>
 
 
       <!-- ================================================= -->
-      <!-- SOCIALS PAGE -->
+      <!-- SOCIALS                                           -->
       <!-- ================================================= -->
 
       <div id="page-socials" class="site-page">
@@ -749,10 +799,11 @@ hr {
 
         <div class="social-intro">
           Here you can find all the links to all my socials.
-          Feel free to follow Daan Tech around the World Wide Web!
         </div>
 
+
         <hr class="social-separator">
+
 
         <div class="social-item">
 
@@ -765,6 +816,7 @@ hr {
           </div>
 
           <p>
+
             <a
               href="https://www.tiktok.com/@daan_tech1?_t=8s6jd25uwni&_r=1"
               target="_blank"
@@ -772,11 +824,14 @@ hr {
             >
               Daan Tech (@daan_tech1) | TikTok
             </a>
+
           </p>
 
         </div>
 
+
         <hr class="social-separator">
+
 
         <div class="social-item">
 
@@ -789,6 +844,7 @@ hr {
           </div>
 
           <p>
+
             <a
               href="https://www.youtube.com/@daan_tech1"
               target="_blank"
@@ -796,11 +852,14 @@ hr {
             >
               Daan Tech - YouTube
             </a>
+
           </p>
 
         </div>
 
+
         <hr class="social-separator">
+
 
         <div class="social-item">
 
@@ -818,7 +877,9 @@ hr {
 
         </div>
 
+
         <hr class="social-separator">
+
 
         <div class="social-item">
 
@@ -831,6 +892,7 @@ hr {
           </div>
 
           <p>
+
             <a
               href="https://github.com/daantech1"
               target="_blank"
@@ -838,11 +900,14 @@ hr {
             >
               daantech1 (Daan Tech)
             </a>
+
           </p>
 
         </div>
 
+
         <hr class="social-separator">
+
 
         <div class="social-item">
 
@@ -855,6 +920,7 @@ hr {
           </div>
 
           <p>
+
             <a
               href="https://www.thingiverse.com/daan_tech1/designs"
               target="_blank"
@@ -862,6 +928,7 @@ hr {
             >
               Designs - daan_tech1 - Thingiverse
             </a>
+
           </p>
 
         </div>
@@ -870,7 +937,7 @@ hr {
 
 
       <!-- ================================================= -->
-      <!-- PROJECTS PAGE -->
+      <!-- PROJECTS                                          -->
       <!-- ================================================= -->
 
       <div id="page-projects" class="site-page">
@@ -884,118 +951,21 @@ hr {
         </p>
 
         <p>
-          Here you can find Internet experiments, software,
-          artificial intelligence, old technology and other
-          things created or tested by Daan Tech.
+          Here you can find experiments, software,
+          old technology, AI and other strange things I have built.
         </p>
 
         <hr>
 
-        <h3>
-          Internet Experiment #01
-          <span class="new blink">NEW!</span>
-        </h3>
-
-        <p>
-          <b>Status:</b>
-          <span class="project-progress">IN PROGRESS</span>
-        </p>
-
-        <p>
-          A strange browser experiment combining early Internet
-          ideas with modern technology.
-        </p>
-
-        <p>
-          This experiment is currently under construction.
-          More information will be published when it is ready.
-        </p>
-
-        <a href="javascript:alert('This project is still under construction!');">
-          More information...
-        </a>
-
-        <hr>
-
-        <h3>
-          AI Playground
-        </h3>
-
-        <p>
-          <b>Status:</b>
-          <span class="project-progress">TESTING</span>
-        </p>
-
-        <p>
-          Experiments involving artificial intelligence,
-          automation, generated media and new AI tools.
-        </p>
-
-        <a href="javascript:alert('AI Playground page coming soon!');">
-          More information...
-        </a>
-
-        <hr>
-
-        <h3>
-          Old Tech Lab
-        </h3>
-
-        <p>
-          <b>Status:</b>
-          <span class="project-active">ACTIVE</span>
-        </p>
-
-        <p>
-          Old computers, obsolete software, vintage hardware,
-          forgotten gadgets and other pieces of technology.
-        </p>
-
-        <a href="javascript:alert('Old Tech Lab page coming soon!');">
-          Enter the Old Tech Lab...
-        </a>
-
-        <hr>
-
-        <h3>
-          Code Drawer
-        </h3>
-
-        <p>
-          <b>Status:</b>
-          COMING SOON
-        </p>
-
-        <p>
-          Small programs, scripts, browser tools and coding
-          experiments made for fun.
-        </p>
-
-        <div class="download-box">
-
-          <div class="download-title">
-            DOWNLOAD AREA
-          </div>
-
-          <p>
-            Small programs, source files and experimental
-            downloads may appear here in the future.
-          </p>
-
-          <a
-            href="javascript:alert('No downloads are available yet. Please check back later!');"
-            class="old-button"
-          >
-            DOWNLOADS
-          </a>
-
+        <div id="projectsContainer">
+          <!-- Projects are inserted automatically -->
         </div>
 
       </div>
 
 
       <!-- ================================================= -->
-      <!-- CONTACT PAGE -->
+      <!-- CONTACT                                           -->
       <!-- ================================================= -->
 
       <div id="page-contact" class="site-page">
@@ -1005,8 +975,8 @@ hr {
         </h2>
 
         <p>
-          Want to talk about technology, send an interesting gadget,
-          suggest a weird project or discuss a collaboration?
+          Want to talk about technology, suggest a weird project
+          or discuss a collaboration?
         </p>
 
         <p>
@@ -1017,7 +987,9 @@ hr {
 
         <div class="contact-box">
 
-          <b>E-MAIL DAAN TECH</b>
+          <b>
+            E-MAIL DAAN TECH
+          </b>
 
           <br><br>
 
@@ -1031,37 +1003,14 @@ hr {
 
         </div>
 
-        <p>
-          <a
-            href="mailto:hello@daantech.example"
-            class="old-button"
-          >
-            SEND E-MAIL
-          </a>
-        </p>
-
-        <hr>
-
-        <h3>
-          Business / Collaborations
-        </h3>
-
-        <p>
-          For collaborations, technology projects, product ideas
-          or other business inquiries, please use the e-mail
-          address above.
-        </p>
-
-        <p class="tiny">
-          Please allow approximately 3-5 Internet business days
-          for your electronic message to travel through cyberspace.
-        </p>
-
       </div>
 
     </div>
 
   </div>
+
+
+  <!-- FOOTER -->
 
   <div class="footer">
 
@@ -1073,13 +1022,7 @@ hr {
 
     <br>
 
-    Recommended resolution:
-    800 × 600 or higher
-
-    <br>
-
-    Compatible with Microsoft Internet Explorer,
-    Netscape Navigator and possibly your current browser.
+    Recommended resolution: 800 × 600 or higher
 
     <br>
 
@@ -1090,8 +1033,9 @@ hr {
 </div>
 
 
+
 <!-- ======================================================= -->
-<!-- SOCIALS POPUP -->
+<!-- SOCIAL POPUP                                            -->
 <!-- ======================================================= -->
 
 <div id="socialPopup" class="social-popup">
@@ -1145,10 +1089,304 @@ hr {
 </div>
 
 
+
 <script>
 
 /* ========================================================= */
-/* PAGE NAVIGATION */
+/* ========================================================= */
+/*                                                           */
+/*                                                           */
+/*          >>> EDIT WEBSITE CONTENT HERE <<<                */
+/*                                                           */
+/*   THIS IS THE PART YOU CAN EASILY CHANGE ON GITHUB.       */
+/*                                                           */
+/*                                                           */
+/* ========================================================= */
+/* ========================================================= */
+
+
+
+/* ========================================================= */
+/*                                                           */
+/*  1. LATEST NEWS                                           */
+/*                                                           */
+/*  These 3 messages appear on HOME under "Latest News".     */
+/*                                                           */
+/* ========================================================= */
+
+const latestNews = [
+
+  /* NEWS 1 */
+
+  {
+    date: "05.09.2026",
+
+    title: "NEW RETRO WEBSITE ONLINE!",
+
+    description:
+      "The new Daan Tech website is officially online. Welcome to my little corner of the World Wide Web!"
+  },
+
+
+  /* NEWS 2 */
+
+  {
+    date: "03.09.2026",
+
+    title: "TESTING AN OLD COMPUTER",
+
+    description:
+      "I found an old computer and started experimenting with old software, strange hardware and very slow Internet technology."
+  },
+
+
+  /* NEWS 3 */
+
+  {
+    date: "01.09.2026",
+
+    title: "NEW AI EXPERIMENT",
+
+    description:
+      "I am currently testing a new artificial intelligence experiment. More information and pictures will be added soon."
+  }
+
+];
+
+
+
+/* ========================================================= */
+/*                                                           */
+/*  2. LATEST PROJECT                                        */
+/*                                                           */
+/*  This appears in the LATEST PROJECT box on the LEFT.      */
+/*                                                           */
+/* ========================================================= */
+
+const latestProject = {
+
+  title:
+    "THE USELESS INTERNET MACHINE",
+
+  status:
+    "IN PROGRESS",
+
+  description:
+    "A completely unnecessary Internet-connected machine that does something nobody asked for.",
+
+  /*
+    Which project should open when someone clicks
+    "Read more..."?
+
+    0 = first project
+    1 = second project
+    2 = third project
+    3 = fourth project
+  */
+
+  projectNumber:
+    0
+
+};
+
+
+
+/* ========================================================= */
+/*                                                           */
+/*  3. PROJECTS                                              */
+/*                                                           */
+/*  COPY A COMPLETE { ... } BLOCK TO ADD A NEW PROJECT.      */
+/*                                                           */
+/*  title       = project title                              */
+/*  status      = project status                             */
+/*  date        = date / month                               */
+/*  description = project description                        */
+/*  image       = image filename in your GitHub repo         */
+/*  link        = optional website link                      */
+/*  linkText    = text shown for the link                    */
+/*                                                           */
+/*  If image is empty:                                       */
+/*                                                           */
+/*      image: ""                                             */
+/*                                                           */
+/*  a grey NO IMAGE AVAILABLE box will appear.               */
+/*                                                           */
+/* ========================================================= */
+
+const projects = [
+
+
+  /* ======================================================= */
+  /* TEST PROJECT 1                                          */
+  /* ======================================================= */
+
+  {
+
+    title:
+      "THE USELESS INTERNET MACHINE",
+
+    status:
+      "IN PROGRESS",
+
+    date:
+      "September 2026",
+
+    description:
+      "For this experiment I am building a completely unnecessary machine connected to the Internet. The goal is mostly to see how complicated I can make something that should be extremely simple.",
+
+    image:
+      "",
+
+    link:
+      "",
+
+    linkText:
+      "View project"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* TEST PROJECT 2                                          */
+  /* ======================================================= */
+
+  {
+
+    title:
+      "WINDOWS XP COMPUTER IN 2026",
+
+    status:
+      "ACTIVE",
+
+    date:
+      "August 2026",
+
+    description:
+      "Can a Windows XP computer still be useful today? I am testing old programs, websites, hardware and Internet connectivity on a real Windows XP computer.",
+
+    image:
+      "",
+
+    link:
+      "",
+
+    linkText:
+      "Read more"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* TEST PROJECT 3                                          */
+  /* ======================================================= */
+
+  {
+
+    title:
+      "AI CONTROLS A REAL MACHINE",
+
+    status:
+      "TESTING",
+
+    date:
+      "August 2026",
+
+    description:
+      "A test where artificial intelligence is connected to a physical machine. The AI can make decisions and control parts of the hardware in the real world.",
+
+    image:
+      "",
+
+    link:
+      "",
+
+    linkText:
+      "Read more"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* TEST PROJECT 4                                          */
+  /* ======================================================= */
+
+  {
+
+    title:
+      "3D PRINTED INTERNET BUTTON",
+
+    status:
+      "FINISHED",
+
+    date:
+      "July 2026",
+
+    description:
+      "A giant 3D printed button connected to the Internet. Pressing the button sends a signal to a small server and activates something somewhere else.",
+
+    image:
+      "",
+
+    link:
+      "https://www.thingiverse.com/daan_tech1/designs",
+
+    linkText:
+      "View on Thingiverse"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* TEST PROJECT 5                                          */
+  /* ======================================================= */
+
+  {
+
+    title:
+      "SECRET PROJECT",
+
+    status:
+      "COMING SOON",
+
+    date:
+      "???",
+
+    description:
+      "I cannot show this project yet. Something strange involving computers, electronics and the Internet is currently being built.",
+
+    image:
+      "",
+
+    link:
+      "",
+
+    linkText:
+      "More information"
+
+  }
+
+
+];
+
+
+/* ========================================================= */
+/*                                                           */
+/*        >>> END OF EASY EDIT AREA <<<                      */
+/*                                                           */
+/*   YOU NORMALLY DO NOT NEED TO EDIT ANYTHING BELOW HERE.   */
+/*                                                           */
+/* ========================================================= */
+
+
+
+
+
+/* ========================================================= */
+/* PAGE NAVIGATION                                           */
 /* ========================================================= */
 
 function showPage(pageName) {
@@ -1157,46 +1395,624 @@ function showPage(pageName) {
     document.getElementsByClassName("site-page");
 
   for (var i = 0; i < pages.length; i++) {
+
     pages[i].style.display = "none";
+
   }
+
 
   var selectedPage =
     document.getElementById("page-" + pageName);
 
+
   if (selectedPage) {
+
     selectedPage.style.display = "block";
+
   }
 
+
   window.scrollTo(0, 0);
+
 }
 
 
+
 /* ========================================================= */
-/* VISITOR COUNTER */
+/* SAFE TEXT                                                 */
+/* ========================================================= */
+
+function escapeHTML(text) {
+
+  var div =
+    document.createElement("div");
+
+  div.textContent =
+    text;
+
+  return div.innerHTML;
+
+}
+
+
+
+/* ========================================================= */
+/* RENDER THE 3 LATEST NEWS ITEMS                            */
+/* ========================================================= */
+
+function renderLatestNews() {
+
+  var container =
+    document.getElementById("latestNews");
+
+
+  container.innerHTML = "";
+
+
+  var newsToShow =
+    latestNews.slice(0, 3);
+
+
+  for (var i = 0; i < newsToShow.length; i++) {
+
+    var news =
+      newsToShow[i];
+
+
+    var item =
+      document.createElement("div");
+
+    item.className =
+      "news-item";
+
+
+    item.innerHTML =
+
+      '<p>' +
+
+        '<span class="news-date">' +
+          escapeHTML(news.date) +
+        '</span>' +
+
+        ' - ' +
+
+        '<span class="news-title">' +
+          escapeHTML(news.title) +
+        '</span>' +
+
+      '</p>' +
+
+      '<p>' +
+        escapeHTML(news.description) +
+      '</p>';
+
+
+    container.appendChild(item);
+
+
+    if (i < newsToShow.length - 1) {
+
+      var line =
+        document.createElement("hr");
+
+      container.appendChild(line);
+
+    }
+
+  }
+
+}
+
+
+
+/* ========================================================= */
+/* PROJECT STATUS COLOR                                      */
+/* ========================================================= */
+
+function getProjectStatusClass(status) {
+
+  var statusUpper =
+    status.toUpperCase();
+
+
+  if (
+    statusUpper === "ACTIVE" ||
+    statusUpper === "ONLINE" ||
+    statusUpper === "FINISHED"
+  ) {
+
+    return "project-active";
+
+  }
+
+
+  if (
+    statusUpper === "IN PROGRESS" ||
+    statusUpper === "TESTING"
+  ) {
+
+    return "project-progress";
+
+  }
+
+
+  if (
+    statusUpper === "COMING SOON"
+  ) {
+
+    return "project-soon";
+
+  }
+
+
+  return "";
+
+}
+
+
+
+/* ========================================================= */
+/* CREATE PROJECT IMAGE                                      */
+/* ========================================================= */
+
+function createProjectImage(project) {
+
+  var wrapper =
+    document.createElement("div");
+
+
+  if (
+    project.image &&
+    project.image.trim() !== ""
+  ) {
+
+    var image =
+      document.createElement("img");
+
+    image.src =
+      project.image;
+
+    image.alt =
+      project.title;
+
+    image.className =
+      "project-picture";
+
+
+    /*
+      If you accidentally enter an image that does not exist,
+      it automatically changes into the grey retro placeholder.
+    */
+
+    image.onerror = function() {
+
+      var placeholder =
+        document.createElement("div");
+
+      placeholder.className =
+        "project-placeholder";
+
+      placeholder.textContent =
+        "[ NO IMAGE AVAILABLE ]";
+
+
+      if (image.parentNode) {
+
+        image.parentNode.replaceChild(
+          placeholder,
+          image
+        );
+
+      }
+
+    };
+
+
+    wrapper.appendChild(image);
+
+  } else {
+
+    var placeholder =
+      document.createElement("div");
+
+    placeholder.className =
+      "project-placeholder";
+
+    placeholder.textContent =
+      "[ NO IMAGE AVAILABLE ]";
+
+    wrapper.appendChild(
+      placeholder
+    );
+
+  }
+
+
+  return wrapper;
+
+}
+
+
+
+/* ========================================================= */
+/* RENDER PROJECTS                                           */
+/* ========================================================= */
+
+function renderProjects() {
+
+  var container =
+    document.getElementById("projectsContainer");
+
+
+  container.innerHTML = "";
+
+
+  for (var i = 0; i < projects.length; i++) {
+
+    var project =
+      projects[i];
+
+
+    var projectBlock =
+      document.createElement("div");
+
+    projectBlock.className =
+      "project-block";
+
+    projectBlock.id =
+      "project-" + i;
+
+
+    /* PROJECT TITLE */
+
+    var title =
+      document.createElement("h3");
+
+    title.textContent =
+      project.title;
+
+    projectBlock.appendChild(
+      title
+    );
+
+
+    /* PROJECT DATE */
+
+    var date =
+      document.createElement("div");
+
+    date.className =
+      "project-date";
+
+    date.textContent =
+      project.date;
+
+    projectBlock.appendChild(
+      date
+    );
+
+
+    /* PROJECT STATUS */
+
+    var statusParagraph =
+      document.createElement("p");
+
+    statusParagraph.innerHTML =
+      "<b>Status:</b> ";
+
+
+    var status =
+      document.createElement("span");
+
+    status.className =
+      getProjectStatusClass(
+        project.status
+      );
+
+    status.textContent =
+      project.status;
+
+
+    statusParagraph.appendChild(
+      status
+    );
+
+
+    projectBlock.appendChild(
+      statusParagraph
+    );
+
+
+    /* PROJECT IMAGE */
+
+    var projectImage =
+      createProjectImage(project);
+
+    projectBlock.appendChild(
+      projectImage
+    );
+
+
+    /* DESCRIPTION */
+
+    var description =
+      document.createElement("p");
+
+    description.textContent =
+      project.description;
+
+    projectBlock.appendChild(
+      description
+    );
+
+
+    /* OPTIONAL LINK */
+
+    if (
+      project.link &&
+      project.link.trim() !== ""
+    ) {
+
+      var linkParagraph =
+        document.createElement("p");
+
+
+      var link =
+        document.createElement("a");
+
+      link.href =
+        project.link;
+
+      link.target =
+        "_blank";
+
+      link.rel =
+        "noopener noreferrer";
+
+      link.textContent =
+        project.linkText || "View project";
+
+
+      linkParagraph.appendChild(
+        link
+      );
+
+      projectBlock.appendChild(
+        linkParagraph
+      );
+
+    }
+
+
+    container.appendChild(
+      projectBlock
+    );
+
+
+    if (i < projects.length - 1) {
+
+      var line =
+        document.createElement("hr");
+
+      container.appendChild(
+        line
+      );
+
+    }
+
+  }
+
+}
+
+
+
+/* ========================================================= */
+/* LATEST PROJECT SIDEBAR                                    */
+/* ========================================================= */
+
+function renderLatestProject() {
+
+  var container =
+    document.getElementById(
+      "latestProjectSidebar"
+    );
+
+
+  container.innerHTML = "";
+
+
+  /* NEW */
+
+  var newLabel =
+    document.createElement("span");
+
+  newLabel.className =
+    "new blink";
+
+  newLabel.textContent =
+    "NEW!";
+
+
+  container.appendChild(
+    newLabel
+  );
+
+
+  container.appendChild(
+    document.createElement("br")
+  );
+
+
+  /* TITLE */
+
+  var title =
+    document.createElement("b");
+
+  title.textContent =
+    latestProject.title;
+
+  container.appendChild(
+    title
+  );
+
+
+  /* STATUS */
+
+  var statusParagraph =
+    document.createElement("p");
+
+
+  var statusTitle =
+    document.createElement("b");
+
+  statusTitle.textContent =
+    "Status: ";
+
+
+  statusParagraph.appendChild(
+    statusTitle
+  );
+
+
+  var status =
+    document.createElement("span");
+
+  status.className =
+    getProjectStatusClass(
+      latestProject.status
+    );
+
+  status.textContent =
+    latestProject.status;
+
+
+  statusParagraph.appendChild(
+    status
+  );
+
+
+  container.appendChild(
+    statusParagraph
+  );
+
+
+  /* DESCRIPTION */
+
+  var description =
+    document.createElement("p");
+
+  description.textContent =
+    latestProject.description;
+
+
+  container.appendChild(
+    description
+  );
+
+
+  /* READ MORE */
+
+  var link =
+    document.createElement("a");
+
+  link.href =
+    "#";
+
+  link.textContent =
+    "Read more...";
+
+
+  link.onclick = function(event) {
+
+    event.preventDefault();
+
+    openLatestProject();
+
+  };
+
+
+  container.appendChild(
+    link
+  );
+
+}
+
+
+
+/* ========================================================= */
+/* OPEN LATEST PROJECT                                       */
+/* ========================================================= */
+
+function openLatestProject() {
+
+  showPage("projects");
+
+
+  setTimeout(function() {
+
+    var project =
+      document.getElementById(
+        "project-" +
+        latestProject.projectNumber
+      );
+
+
+    if (project) {
+
+      project.scrollIntoView();
+
+    }
+
+  }, 10);
+
+}
+
+
+
+/* ========================================================= */
+/* VISITOR COUNTER                                           */
 /* ========================================================= */
 
 function updateVisitorCounter() {
 
   var storedCount =
-    localStorage.getItem("daanTechVisitorCount");
+    localStorage.getItem(
+      "daanTechVisitorCount"
+    );
+
 
   if (storedCount === null) {
-    storedCount = 4821;
+
+    storedCount =
+      4821;
+
   } else {
-    storedCount = parseInt(storedCount, 10);
+
+    storedCount =
+      parseInt(
+        storedCount,
+        10
+      );
+
   }
 
+
   var visitedBefore =
-    sessionStorage.getItem("daanTechVisited");
+    sessionStorage.getItem(
+      "daanTechVisited"
+    );
+
 
   if (!visitedBefore) {
 
     storedCount++;
 
+
     localStorage.setItem(
       "daanTechVisitorCount",
       storedCount
     );
+
 
     sessionStorage.setItem(
       "daanTechVisited",
@@ -1205,30 +2021,44 @@ function updateVisitorCounter() {
 
   }
 
+
   var counter =
-    document.getElementById("visitorCounter");
+    document.getElementById(
+      "visitorCounter"
+    );
+
 
   if (counter) {
 
     counter.innerText =
-      String(storedCount).padStart(6, "0");
+      String(storedCount).padStart(
+        6,
+        "0"
+      );
 
   }
 
 }
 
 
+
 /* ========================================================= */
-/* SOCIAL POPUP */
+/* SOCIAL POPUP                                              */
 /* ========================================================= */
 
 function showSocialPopup() {
 
   var popup =
-    document.getElementById("socialPopup");
+    document.getElementById(
+      "socialPopup"
+    );
+
 
   if (popup) {
-    popup.style.display = "block";
+
+    popup.style.display =
+      "block";
+
   }
 
 }
@@ -1237,10 +2067,16 @@ function showSocialPopup() {
 function closeSocialPopup() {
 
   var popup =
-    document.getElementById("socialPopup");
+    document.getElementById(
+      "socialPopup"
+    );
+
 
   if (popup) {
-    popup.style.display = "none";
+
+    popup.style.display =
+      "none";
+
   }
 
 }
@@ -1250,28 +2086,51 @@ function openSocialsFromPopup() {
 
   closeSocialPopup();
 
-  showPage("socials");
+  showPage(
+    "socials"
+  );
 
 }
 
 
+
 /* ========================================================= */
-/* START WEBSITE */
+/* START WEBSITE                                             */
 /* ========================================================= */
 
 window.onload = function() {
 
-  showPage("home");
+  /* HOME IS ALWAYS THE FIRST PAGE */
+
+  showPage(
+    "home"
+  );
+
+
+  /* LOAD EASY EDIT CONTENT */
+
+  renderLatestNews();
+
+  renderLatestProject();
+
+  renderProjects();
+
+
+  /* VISITOR COUNTER */
 
   updateVisitorCounter();
 
-  /*
-    Show the social popup 5 seconds after opening the website.
-  */
 
-  setTimeout(function() {
-    showSocialPopup();
-  }, 5000);
+  /* SOCIALS POPUP AFTER 5 SECONDS */
+
+  setTimeout(
+    function() {
+
+      showSocialPopup();
+
+    },
+    5000
+  );
 
 };
 
