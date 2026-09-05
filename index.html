@@ -177,6 +177,54 @@ marquee {
 
 
 /* ========================================================= */
+/* LANGUAGE SELECTOR                                         */
+/* ========================================================= */
+
+.language-list {
+  padding: 4px 5px 5px 5px;
+}
+
+.language-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 2px;
+  color: #0000cc;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.language-link:hover {
+  color: #cc0000;
+  background: #ffff99;
+}
+
+.language-link.active-language {
+  background: #ffffcc;
+  font-weight: bold;
+  color: #990000;
+}
+
+.language-flag {
+  width: 25px;
+  height: 15px;
+  object-fit: cover;
+  border: 1px solid #777777;
+  flex-shrink: 0;
+}
+
+.language-current {
+  border-top: 1px dotted #999999;
+  margin-top: 5px;
+  padding-top: 5px;
+  text-align: center;
+  font-size: 10px;
+  color: #555555;
+}
+
+
+/* ========================================================= */
 /* VISITOR COUNTER                                           */
 /* ========================================================= */
 
@@ -475,13 +523,6 @@ p {
   padding: 0;
 }
 
-.popup-close:active {
-  border-top: 2px solid #555555;
-  border-left: 2px solid #555555;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-}
-
 .social-popup-content {
   padding: 10px;
   font-size: 13px;
@@ -602,7 +643,7 @@ hr {
 
 
 /* ========================================================= */
-/* OLD-SCHOOL FIXED WIDTH                                    */
+/* OLD SCHOOL FIXED WIDTH                                    */
 /* ========================================================= */
 
 @media screen and (max-width: 1200px) {
@@ -634,6 +675,7 @@ hr {
 
 <body>
 
+
 <script>
 
 /* ========================================================= */
@@ -641,16 +683,12 @@ hr {
 /*                                                           */
 /*          >>> EDIT WEBSITE CONTENT HERE <<<                */
 /*                                                           */
-/*   THIS IS THE ONLY PART YOU NORMALLY NEED TO EDIT.        */
-/*                                                           */
 /* ========================================================= */
 /* ========================================================= */
 
 
 /* ========================================================= */
 /* 1. LATEST NEWS                                            */
-/*                                                           */
-/* These 3 items appear on the HOME page.                    */
 /* ========================================================= */
 
 const latestNews = [
@@ -678,14 +716,6 @@ const latestNews = [
 
 /* ========================================================= */
 /* 2. LATEST PROJECT                                         */
-/*                                                           */
-/* This appears in the LEFT SIDEBAR.                         */
-/*                                                           */
-/* projectNumber:                                            */
-/* 0 = first project                                         */
-/* 1 = second project                                        */
-/* 2 = third project                                         */
-/* etc.                                                      */
 /* ========================================================= */
 
 const latestProject = {
@@ -704,17 +734,6 @@ const latestProject = {
 
 /* ========================================================= */
 /* 3. PROJECTS                                               */
-/*                                                           */
-/* COPY A COMPLETE { ... } BLOCK TO ADD A NEW PROJECT.       */
-/*                                                           */
-/* image: ""                                                 */
-/* = no image                                                */
-/*                                                           */
-/* image: "project.jpg"                                      */
-/* = image file from your GitHub repository                  */
-/*                                                           */
-/* link: ""                                                  */
-/* = no link                                                 */
 /* ========================================================= */
 
 const projects = [
@@ -773,12 +792,6 @@ const clippyMessages = {
 };
 
 
-/* ========================================================= */
-/* 5. RANDOM CLIPPY MESSAGES                                 */
-/*                                                           */
-/* Click Clippy and he says one of these.                    */
-/* ========================================================= */
-
 const clippyRandomMessages = [
 
   "Did you know this website is powered by HTML and questionable decisions?",
@@ -801,9 +814,7 @@ const clippyRandomMessages = [
 
 
 /* ========================================================= */
-/*                                                           */
-/*          >>> END OF EASY EDIT AREA <<<                    */
-/*                                                           */
+/* END OF EASY EDIT AREA                                     */
 /* ========================================================= */
 
 </script>
@@ -812,15 +823,11 @@ const clippyRandomMessages = [
 
 <!-- ======================================================= -->
 <!-- CLIPPY                                                  -->
-<!-- clippy.gif must be in the same repo as index.html       -->
 <!-- ======================================================= -->
 
 <div class="clippy-helper">
 
-  <div
-    class="clippy-speech"
-    id="clippySpeech"
-  >
+  <div class="clippy-speech" id="clippySpeech">
     <span class="clippy-name">Clippy:</span>
     It looks like you're visiting Daan Tech!
   </div>
@@ -843,27 +850,28 @@ const clippyRandomMessages = [
 
 <div class="page">
 
+
   <div class="topbar">
-    Official Daan Tech Homepage
+    <span id="topBarText">Official Daan Tech Homepage</span>
     &nbsp; | &nbsp;
-    Last updated: 5 September 2026
+    <span id="lastUpdatedText">Last updated: 5 September 2026</span>
   </div>
 
 
   <div class="header">
 
-    <h1>
+    <h1 id="headerTitle">
       WELCOME TO DAAN TECH
     </h1>
 
-    <p>
+    <p id="headerSubtitle">
       Technology, experiments &amp; strange things from the Internet
     </p>
 
   </div>
 
 
-  <marquee scrollamount="3">
+  <marquee scrollamount="3" id="marqueeText">
     ★ WELCOME TO DAAN TECH ★
     NEW PROJECTS COMING SOON ★
     AI EXPERIMENTS ★
@@ -875,19 +883,35 @@ const clippyRandomMessages = [
 
   <div class="nav">
 
-    <a href="#" onclick="showPage('home'); return false;">
+    <a
+      href="#"
+      id="navHome"
+      onclick="showPage('home'); return false;"
+    >
       HOME
     </a>
 
-    <a href="#" onclick="showPage('socials'); return false;">
+    <a
+      href="#"
+      id="navSocials"
+      onclick="showPage('socials'); return false;"
+    >
       SOCIALS
     </a>
 
-    <a href="#" onclick="showPage('projects'); return false;">
+    <a
+      href="#"
+      id="navProjects"
+      onclick="showPage('projects'); return false;"
+    >
       PROJECTS
     </a>
 
-    <a href="#" onclick="showPage('contact'); return false;">
+    <a
+      href="#"
+      id="navContact"
+      onclick="showPage('contact'); return false;"
+    >
       CONTACT
     </a>
 
@@ -904,9 +928,11 @@ const clippyRandomMessages = [
     <div class="sidebar">
 
 
+      <!-- LATEST PROJECT -->
+
       <div class="box">
 
-        <div class="box-title">
+        <div class="box-title" id="latestProjectBoxTitle">
           LATEST PROJECT
         </div>
 
@@ -919,15 +945,201 @@ const clippyRandomMessages = [
       </div>
 
 
+      <!-- ================================================= -->
+      <!-- CHOOSE LANGUAGE                                   -->
+      <!-- ================================================= -->
+
       <div class="box">
 
-        <div class="box-title">
+        <div class="box-title" id="languageBoxTitle">
+          CHOOSE LANGUAGE
+        </div>
+
+        <div class="language-list">
+
+
+          <div
+            class="language-link active-language"
+            data-language="en"
+            onclick="setLanguage('en');"
+          >
+
+            <img
+              src="english-flag.jpg"
+              alt="English"
+              class="language-flag"
+            >
+
+            <span>
+              English
+            </span>
+
+          </div>
+
+
+          <div
+            class="language-link"
+            data-language="de"
+            onclick="setLanguage('de');"
+          >
+
+            <img
+              src="german-flag.jpg"
+              alt="Deutsch"
+              class="language-flag"
+            >
+
+            <span>
+              Deutsch
+            </span>
+
+          </div>
+
+
+          <div
+            class="language-link"
+            data-language="it"
+            onclick="setLanguage('it');"
+          >
+
+            <img
+              src="italiano-flag.jpg"
+              alt="Italiano"
+              class="language-flag"
+            >
+
+            <span>
+              Italiano
+            </span>
+
+          </div>
+
+
+          <div
+            class="language-link"
+            data-language="nl"
+            onclick="setLanguage('nl');"
+          >
+
+            <img
+              src="dutch-flag.jpg"
+              alt="Nederlands"
+              class="language-flag"
+            >
+
+            <span>
+              Nederlands
+            </span>
+
+          </div>
+
+
+          <div
+            class="language-link"
+            data-language="yu"
+            onclick="setLanguage('yu');"
+          >
+
+            <img
+              src="yugoslavia-flag.jpg"
+              alt="Yugoslavia"
+              class="language-flag"
+            >
+
+            <span>
+              Yugoslavia
+            </span>
+
+          </div>
+
+
+          <div
+            class="language-link"
+            data-language="fr"
+            onclick="setLanguage('fr');"
+          >
+
+            <img
+              src="french-flag.jpg"
+              alt="Francais"
+              class="language-flag"
+            >
+
+            <span>
+              Francais
+            </span>
+
+          </div>
+
+
+          <div
+            class="language-link"
+            data-language="zh"
+            onclick="setLanguage('zh');"
+          >
+
+            <img
+              src="chinese-flag.jpg"
+              alt="中文"
+              class="language-flag"
+            >
+
+            <span>
+              中文
+            </span>
+
+          </div>
+
+
+          <div
+            class="language-link"
+            data-language="ru"
+            onclick="setLanguage('ru');"
+          >
+
+            <img
+              src="russian-flag.jpg"
+              alt="русский"
+              class="language-flag"
+            >
+
+            <span>
+              русский
+            </span>
+
+          </div>
+
+
+          <div class="language-current">
+
+            <span id="currentLanguageLabel">
+              Current:
+            </span>
+
+            <b id="currentLanguage">
+              English
+            </b>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- VISITOR COUNTER -->
+
+      <div class="box">
+
+        <div class="box-title" id="visitorBoxTitle">
           VISITOR COUNTER
         </div>
 
         <div class="box-content counter-wrap">
 
-          You are visitor
+          <span id="visitorText">
+            You are visitor
+          </span>
 
           <br><br>
 
@@ -943,19 +1155,29 @@ const clippyRandomMessages = [
       </div>
 
 
+      <!-- QUICK LINKS -->
+
       <div class="box">
 
-        <div class="box-title">
+        <div class="box-title" id="quickLinksTitle">
           QUICK LINKS
         </div>
 
         <div class="box-content site-links">
 
-          <a href="#" onclick="showPage('home'); return false;">
+          <a
+            href="#"
+            id="quickHome"
+            onclick="showPage('home'); return false;"
+          >
             Home Page
           </a>
 
-          <a href="#" onclick="showPage('projects'); return false;">
+          <a
+            href="#"
+            id="quickProjects"
+            onclick="showPage('projects'); return false;"
+          >
             Latest Projects
           </a>
 
@@ -983,7 +1205,10 @@ const clippyRandomMessages = [
             GitHub
           </a>
 
-          <a href="mailto:business.daantech@gmail.com">
+          <a
+            href="mailto:business.daantech@gmail.com"
+            id="quickEmail"
+          >
             Send E-Mail
           </a>
 
@@ -994,18 +1219,21 @@ const clippyRandomMessages = [
     </div>
 
 
+
     <!-- =================================================== -->
-    <!-- CONTENT                                             -->
+    <!-- MAIN CONTENT                                        -->
     <!-- =================================================== -->
 
     <div class="content">
 
 
-      <!-- HOME -->
+      <!-- ================================================= -->
+      <!-- HOME                                              -->
+      <!-- ================================================= -->
 
       <div id="page-home" class="site-page">
 
-        <h2>
+        <h2 id="homeTitle">
           Welcome to Daan Tech!
         </h2>
 
@@ -1015,24 +1243,24 @@ const clippyRandomMessages = [
           class="home-picture"
         >
 
-        <p>
+        <p id="homeWelcome">
           Welcome to the official retro website of
           <b>Daan Tech!</b>
         </p>
 
-        <p>
+        <p id="homeParagraph1">
           Daan Tech is all about technology, weird Internet experiments,
           coding, projects, artificial intelligence, old technology and
           fun tech ideas.
         </p>
 
-        <p>
+        <p id="homeParagraph2">
           This website is my small corner of the World Wide Web where I
           collect experiments, strange computer projects, coding ideas,
           technology videos and other digital things that I find interesting.
         </p>
 
-        <p>
+        <p id="homeParagraph3">
           You may find old computers, new AI tools, unusual software,
           browser experiments, programming projects, hardware and
           obscure Internet discoveries.
@@ -1040,16 +1268,20 @@ const clippyRandomMessages = [
 
         <div class="notice">
 
-          <b>NOTICE:</b>
+          <b id="noticeTitle">
+            NOTICE:
+          </b>
 
-          This website may contain unfinished projects,
-          experimental technology, broken links and strange HTML.
+          <span id="noticeText">
+            This website may contain unfinished projects,
+            experimental technology, broken links and strange HTML.
+          </span>
 
         </div>
 
         <hr>
 
-        <h3>
+        <h3 id="latestNewsTitle">
           Latest News
         </h3>
 
@@ -1059,15 +1291,21 @@ const clippyRandomMessages = [
       </div>
 
 
-      <!-- SOCIALS -->
+
+      <!-- ================================================= -->
+      <!-- SOCIALS                                           -->
+      <!-- ================================================= -->
 
       <div id="page-socials" class="site-page">
 
-        <h2>
+        <h2 id="socialsTitle">
           Welcome on the SOCIALS tab!
         </h2>
 
-        <div class="social-intro">
+        <div
+          class="social-intro"
+          id="socialsIntro"
+        >
           Here you can find all the links to all my socials.
         </div>
 
@@ -1137,7 +1375,10 @@ const clippyRandomMessages = [
             (@daan_tech1)
           </div>
 
-          <p class="coming-soon">
+          <p
+            class="coming-soon"
+            id="twitchComingSoon"
+          >
             COMING BACK SOON
           </p>
 
@@ -1198,19 +1439,22 @@ const clippyRandomMessages = [
       </div>
 
 
-      <!-- PROJECTS -->
+
+      <!-- ================================================= -->
+      <!-- PROJECTS                                          -->
+      <!-- ================================================= -->
 
       <div id="page-projects" class="site-page">
 
-        <h2>
+        <h2 id="projectsTitle">
           Daan Tech Projects
         </h2>
 
-        <p>
+        <p id="projectsIntro1">
           Welcome to the Daan Tech project archive.
         </p>
 
-        <p>
+        <p id="projectsIntro2">
           Here you can find experiments, software,
           old technology, AI and other strange things I have built.
         </p>
@@ -1223,26 +1467,29 @@ const clippyRandomMessages = [
       </div>
 
 
-      <!-- CONTACT -->
+
+      <!-- ================================================= -->
+      <!-- CONTACT                                           -->
+      <!-- ================================================= -->
 
       <div id="page-contact" class="site-page">
 
-        <h2>
+        <h2 id="contactTitle">
           Contact Daan Tech
         </h2>
 
-        <p>
+        <p id="contactIntro1">
           Want to talk about technology, suggest a weird project,
           ask a question or discuss a collaboration?
         </p>
 
-        <p>
+        <p id="contactIntro2">
           You can send me an e-mail at:
         </p>
 
         <div class="contact-box">
 
-          <b>
+          <b id="emailBoxTitle">
             E-MAIL DAAN TECH
           </b>
 
@@ -1257,7 +1504,9 @@ const clippyRandomMessages = [
 
           <br><br>
 
-          Click the address above to open your e-mail program.
+          <span id="emailHelpText">
+            Click the address above to open your e-mail program.
+          </span>
 
         </div>
 
@@ -1266,6 +1515,7 @@ const clippyRandomMessages = [
           <a
             href="mailto:business.daantech@gmail.com?subject=Daan%20Tech%20Website"
             class="old-button"
+            id="emailButton"
           >
             SEND ME AN E-MAIL
           </a>
@@ -1274,11 +1524,11 @@ const clippyRandomMessages = [
 
         <hr>
 
-        <h3>
+        <h3 id="businessTitle">
           Business / Collaborations
         </h3>
 
-        <p>
+        <p id="businessText">
           For collaborations, projects, products, technology ideas,
           sponsorships or other business inquiries, feel free to send me
           an e-mail.
@@ -1291,21 +1541,32 @@ const clippyRandomMessages = [
   </div>
 
 
+
+  <!-- ===================================================== -->
+  <!-- FOOTER                                                -->
+  <!-- ===================================================== -->
+
   <div class="footer">
 
     © 2026 Daan Tech
 
     <br><br>
 
-    Best viewed on a computer connected to the Internet.
+    <span id="footerInternet">
+      Best viewed on a computer connected to the Internet.
+    </span>
 
     <br>
 
-    Recommended resolution: 800 × 600 or higher
+    <span id="footerResolution">
+      Recommended resolution: 800 × 600 or higher
+    </span>
 
     <br>
 
-    This website uses no cookies.
+    <span id="footerCookies">
+      This website uses no cookies.
+    </span>
 
   </div>
 
@@ -1321,7 +1582,9 @@ const clippyRandomMessages = [
 
   <div class="social-popup-title">
 
-    DAAN TECH INTERNET MESSAGE
+    <span id="popupTitle">
+      DAAN TECH INTERNET MESSAGE
+    </span>
 
     <button
       class="popup-close"
@@ -1336,10 +1599,12 @@ const clippyRandomMessages = [
   <div class="social-popup-content">
 
     <p>
-      <b>Hey Internet visitor!</b>
+      <b id="popupHello">
+        Hey Internet visitor!
+      </b>
     </p>
 
-    <p>
+    <p id="popupQuestion">
       Are you already following Daan Tech on social media?
     </p>
 
@@ -1357,6 +1622,7 @@ const clippyRandomMessages = [
       <button
         class="old-button"
         onclick="closeSocialPopup();"
+        id="popupCloseButton"
       >
         CLOSE
       </button>
@@ -1372,29 +1638,934 @@ const clippyRandomMessages = [
 <script>
 
 /* ========================================================= */
+/* LANGUAGE SYSTEM                                           */
+/* ========================================================= */
+
+let currentLanguageCode = "en";
+let currentPage = "home";
+
+
+const languageNames = {
+
+  en: "English",
+  de: "Deutsch",
+  it: "Italiano",
+  nl: "Nederlands",
+  yu: "Yugoslavia",
+  fr: "Francais",
+  zh: "中文",
+  ru: "русский"
+
+};
+
+
+/*
+  These translations affect the fixed website interface.
+
+  Your manually added Latest News and Projects remain exactly
+  as you write them in the easy edit area above.
+*/
+
+const translations = {
+
+
+  /* ======================================================= */
+  /* ENGLISH                                                 */
+  /* ======================================================= */
+
+  en: {
+
+    topBar:
+      "Official Daan Tech Homepage",
+
+    lastUpdated:
+      "Last updated: 5 September 2026",
+
+    header:
+      "WELCOME TO DAAN TECH",
+
+    subtitle:
+      "Technology, experiments & strange things from the Internet",
+
+    marquee:
+      "★ WELCOME TO DAAN TECH ★ NEW PROJECTS COMING SOON ★ AI EXPERIMENTS ★ OLD COMPUTERS ★ CODE ★ INTERNET STUFF ★",
+
+    home:
+      "HOME",
+
+    socials:
+      "SOCIALS",
+
+    projects:
+      "PROJECTS",
+
+    contact:
+      "CONTACT",
+
+    latestProject:
+      "LATEST PROJECT",
+
+    chooseLanguage:
+      "CHOOSE LANGUAGE",
+
+    current:
+      "Current:",
+
+    visitorCounter:
+      "VISITOR COUNTER",
+
+    visitor:
+      "You are visitor",
+
+    quickLinks:
+      "QUICK LINKS",
+
+    homePage:
+      "Home Page",
+
+    latestProjects:
+      "Latest Projects",
+
+    sendEmail:
+      "Send E-Mail",
+
+    homeTitle:
+      "Welcome to Daan Tech!",
+
+    homeWelcome:
+      "Welcome to the official retro website of Daan Tech!",
+
+    homeP1:
+      "Daan Tech is all about technology, weird Internet experiments, coding, projects, artificial intelligence, old technology and fun tech ideas.",
+
+    homeP2:
+      "This website is my small corner of the World Wide Web where I collect experiments, strange computer projects, coding ideas, technology videos and other digital things that I find interesting.",
+
+    homeP3:
+      "You may find old computers, new AI tools, unusual software, browser experiments, programming projects, hardware and obscure Internet discoveries.",
+
+    noticeTitle:
+      "NOTICE:",
+
+    notice:
+      "This website may contain unfinished projects, experimental technology, broken links and strange HTML.",
+
+    latestNews:
+      "Latest News",
+
+    socialsTitle:
+      "Welcome on the SOCIALS tab!",
+
+    socialsIntro:
+      "Here you can find all the links to all my socials.",
+
+    comingSoon:
+      "COMING BACK SOON",
+
+    projectsTitle:
+      "Daan Tech Projects",
+
+    projectsIntro1:
+      "Welcome to the Daan Tech project archive.",
+
+    projectsIntro2:
+      "Here you can find experiments, software, old technology, AI and other strange things I have built.",
+
+    contactTitle:
+      "Contact Daan Tech",
+
+    contactIntro1:
+      "Want to talk about technology, suggest a weird project, ask a question or discuss a collaboration?",
+
+    contactIntro2:
+      "You can send me an e-mail at:",
+
+    emailBox:
+      "E-MAIL DAAN TECH",
+
+    emailHelp:
+      "Click the address above to open your e-mail program.",
+
+    emailButton:
+      "SEND ME AN E-MAIL",
+
+    businessTitle:
+      "Business / Collaborations",
+
+    business:
+      "For collaborations, projects, products, technology ideas, sponsorships or other business inquiries, feel free to send me an e-mail.",
+
+    footerInternet:
+      "Best viewed on a computer connected to the Internet.",
+
+    footerResolution:
+      "Recommended resolution: 800 × 600 or higher",
+
+    footerCookies:
+      "This website uses no cookies.",
+
+    popupTitle:
+      "DAAN TECH INTERNET MESSAGE",
+
+    popupHello:
+      "Hey Internet visitor!",
+
+    popupQuestion:
+      "Are you already following Daan Tech on social media?",
+
+    close:
+      "CLOSE"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* DEUTSCH                                                 */
+  /* ======================================================= */
+
+  de: {
+
+    topBar: "Offizielle Daan Tech Homepage",
+    lastUpdated: "Zuletzt aktualisiert: 5. September 2026",
+    header: "WILLKOMMEN BEI DAAN TECH",
+    subtitle: "Technologie, Experimente & seltsame Dinge aus dem Internet",
+    marquee: "★ WILLKOMMEN BEI DAAN TECH ★ NEUE PROJEKTE KOMMEN BALD ★ KI-EXPERIMENTE ★ ALTE COMPUTER ★ CODE ★ INTERNET ★",
+
+    home: "START",
+    socials: "SOCIALS",
+    projects: "PROJEKTE",
+    contact: "KONTAKT",
+
+    latestProject: "NEUESTES PROJEKT",
+    chooseLanguage: "SPRACHE WÄHLEN",
+    current: "Aktuell:",
+    visitorCounter: "BESUCHERZÄHLER",
+    visitor: "Du bist Besucher",
+    quickLinks: "SCHNELLLINKS",
+    homePage: "Startseite",
+    latestProjects: "Neueste Projekte",
+    sendEmail: "E-Mail senden",
+
+    homeTitle: "Willkommen bei Daan Tech!",
+    homeWelcome: "Willkommen auf der offiziellen Retro-Webseite von Daan Tech!",
+    homeP1: "Bei Daan Tech dreht sich alles um Technologie, seltsame Internet-Experimente, Programmieren, Projekte, künstliche Intelligenz, alte Technik und lustige Tech-Ideen.",
+    homeP2: "Diese Webseite ist meine kleine Ecke im World Wide Web für Experimente, Computerprojekte, Programmierideen, Technikvideos und andere digitale Dinge.",
+    homeP3: "Hier findest du alte Computer, neue KI-Werkzeuge, ungewöhnliche Software, Browser-Experimente, Hardware und obskure Internet-Funde.",
+
+    noticeTitle: "HINWEIS:",
+    notice: "Diese Webseite kann unfertige Projekte, experimentelle Technik, kaputte Links und seltsames HTML enthalten.",
+
+    latestNews: "Neueste Nachrichten",
+
+    socialsTitle: "Willkommen im SOCIALS-Bereich!",
+    socialsIntro: "Hier findest du alle Links zu meinen Social-Media-Kanälen.",
+    comingSoon: "BALD WIEDER DA",
+
+    projectsTitle: "Daan Tech Projekte",
+    projectsIntro1: "Willkommen im Daan Tech Projektarchiv.",
+    projectsIntro2: "Hier findest du Experimente, Software, alte Technik, KI und andere seltsame Dinge, die ich gebaut habe.",
+
+    contactTitle: "Daan Tech kontaktieren",
+    contactIntro1: "Möchtest du über Technik sprechen, ein Projekt vorschlagen oder eine Zusammenarbeit besprechen?",
+    contactIntro2: "Du kannst mir eine E-Mail senden an:",
+    emailBox: "E-MAIL AN DAAN TECH",
+    emailHelp: "Klicke auf die Adresse oben, um dein E-Mail-Programm zu öffnen.",
+    emailButton: "E-MAIL SENDEN",
+
+    businessTitle: "Business / Kooperationen",
+    business: "Für Kooperationen, Projekte, Produkte, Sponsoring oder andere geschäftliche Anfragen kannst du mir gerne eine E-Mail senden.",
+
+    footerInternet: "Am besten auf einem Computer mit Internetverbindung ansehen.",
+    footerResolution: "Empfohlene Auflösung: 800 × 600 oder höher",
+    footerCookies: "Diese Webseite verwendet keine Cookies.",
+
+    popupTitle: "DAAN TECH INTERNET-NACHRICHT",
+    popupHello: "Hallo Internet-Besucher!",
+    popupQuestion: "Folgst du Daan Tech schon in den sozialen Medien?",
+    close: "SCHLIESSEN"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* ITALIANO                                                */
+  /* ======================================================= */
+
+  it: {
+
+    topBar: "Homepage ufficiale Daan Tech",
+    lastUpdated: "Ultimo aggiornamento: 5 settembre 2026",
+    header: "BENVENUTO SU DAAN TECH",
+    subtitle: "Tecnologia, esperimenti e strane cose da Internet",
+    marquee: "★ BENVENUTO SU DAAN TECH ★ NUOVI PROGETTI IN ARRIVO ★ ESPERIMENTI AI ★ VECCHI COMPUTER ★ CODICE ★ INTERNET ★",
+
+    home: "HOME",
+    socials: "SOCIAL",
+    projects: "PROGETTI",
+    contact: "CONTATTI",
+
+    latestProject: "ULTIMO PROGETTO",
+    chooseLanguage: "SCEGLI LINGUA",
+    current: "Attuale:",
+    visitorCounter: "CONTATORE VISITATORI",
+    visitor: "Sei il visitatore",
+    quickLinks: "LINK RAPIDI",
+    homePage: "Pagina iniziale",
+    latestProjects: "Ultimi progetti",
+    sendEmail: "Invia E-Mail",
+
+    homeTitle: "Benvenuto su Daan Tech!",
+    homeWelcome: "Benvenuto sul sito retro ufficiale di Daan Tech!",
+    homeP1: "Daan Tech parla di tecnologia, strani esperimenti Internet, programmazione, progetti, intelligenza artificiale, vecchia tecnologia e idee divertenti.",
+    homeP2: "Questo sito è il mio piccolo angolo del World Wide Web dove raccolgo esperimenti, progetti informatici, idee di programmazione e video tecnologici.",
+    homeP3: "Qui puoi trovare vecchi computer, nuovi strumenti AI, software insolito, esperimenti browser, hardware e strane scoperte Internet.",
+
+    noticeTitle: "AVVISO:",
+    notice: "Questo sito può contenere progetti incompleti, tecnologia sperimentale, link rotti e HTML strano.",
+
+    latestNews: "Ultime notizie",
+
+    socialsTitle: "Benvenuto nella sezione SOCIAL!",
+    socialsIntro: "Qui puoi trovare tutti i link ai miei social.",
+    comingSoon: "TORNERÀ PRESTO",
+
+    projectsTitle: "Progetti Daan Tech",
+    projectsIntro1: "Benvenuto nell'archivio progetti di Daan Tech.",
+    projectsIntro2: "Qui trovi esperimenti, software, vecchia tecnologia, AI e altre strane cose che ho costruito.",
+
+    contactTitle: "Contatta Daan Tech",
+    contactIntro1: "Vuoi parlare di tecnologia, suggerire un progetto o discutere una collaborazione?",
+    contactIntro2: "Puoi inviarmi una e-mail a:",
+    emailBox: "E-MAIL DAAN TECH",
+    emailHelp: "Clicca sull'indirizzo sopra per aprire il tuo programma e-mail.",
+    emailButton: "INVIAMI UNA E-MAIL",
+
+    businessTitle: "Business / Collaborazioni",
+    business: "Per collaborazioni, progetti, prodotti, sponsorizzazioni o altre richieste commerciali, inviami pure una e-mail.",
+
+    footerInternet: "Da vedere preferibilmente su un computer connesso a Internet.",
+    footerResolution: "Risoluzione consigliata: 800 × 600 o superiore",
+    footerCookies: "Questo sito non utilizza cookie.",
+
+    popupTitle: "MESSAGGIO INTERNET DAAN TECH",
+    popupHello: "Ciao visitatore di Internet!",
+    popupQuestion: "Segui già Daan Tech sui social?",
+    close: "CHIUDI"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* NEDERLANDS                                              */
+  /* ======================================================= */
+
+  nl: {
+
+    topBar: "Officiële Daan Tech Homepage",
+    lastUpdated: "Laatst bijgewerkt: 5 september 2026",
+    header: "WELKOM BIJ DAAN TECH",
+    subtitle: "Technologie, experimenten & vreemde dingen van het internet",
+    marquee: "★ WELKOM BIJ DAAN TECH ★ NIEUWE PROJECTEN KOMEN ERAAN ★ AI-EXPERIMENTEN ★ OUDE COMPUTERS ★ CODE ★ INTERNET ★",
+
+    home: "HOME",
+    socials: "SOCIALS",
+    projects: "PROJECTEN",
+    contact: "CONTACT",
+
+    latestProject: "LAATSTE PROJECT",
+    chooseLanguage: "KIES TAAL",
+    current: "Huidig:",
+    visitorCounter: "BEZOEKERSTELLER",
+    visitor: "Jij bent bezoeker",
+    quickLinks: "SNELLE LINKS",
+    homePage: "Homepagina",
+    latestProjects: "Laatste projecten",
+    sendEmail: "Stuur e-mail",
+
+    homeTitle: "Welkom bij Daan Tech!",
+    homeWelcome: "Welkom op de officiële retro website van Daan Tech!",
+    homeP1: "Daan Tech gaat over technologie, vreemde internetexperimenten, programmeren, projecten, kunstmatige intelligentie, oude technologie en leuke tech-ideeën.",
+    homeP2: "Deze website is mijn kleine hoekje van het World Wide Web waar ik experimenten, computerprojecten, code-ideeën en technologievideo's verzamel.",
+    homeP3: "Je vindt hier oude computers, nieuwe AI-tools, vreemde software, browserexperimenten, hardware en obscure internetvondsten.",
+
+    noticeTitle: "LET OP:",
+    notice: "Deze website kan onafgemaakte projecten, experimentele technologie, kapotte links en vreemde HTML bevatten.",
+
+    latestNews: "Laatste nieuws",
+
+    socialsTitle: "Welkom op het SOCIALS-tabblad!",
+    socialsIntro: "Hier vind je alle links naar al mijn socials.",
+    comingSoon: "BINNENKORT TERUG",
+
+    projectsTitle: "Daan Tech Projecten",
+    projectsIntro1: "Welkom in het Daan Tech projectarchief.",
+    projectsIntro2: "Hier vind je experimenten, software, oude technologie, AI en andere vreemde dingen die ik heb gebouwd.",
+
+    contactTitle: "Contact Daan Tech",
+    contactIntro1: "Wil je praten over technologie, een vreemd project voorstellen, een vraag stellen of een samenwerking bespreken?",
+    contactIntro2: "Je kunt mij een e-mail sturen naar:",
+    emailBox: "E-MAIL DAAN TECH",
+    emailHelp: "Klik op het adres hierboven om je e-mailprogramma te openen.",
+    emailButton: "STUUR MIJ EEN E-MAIL",
+
+    businessTitle: "Zakelijk / Samenwerkingen",
+    business: "Voor samenwerkingen, projecten, producten, technologie-ideeën, sponsoring of andere zakelijke vragen kun je mij een e-mail sturen.",
+
+    footerInternet: "Het beste te bekijken op een computer die verbonden is met het internet.",
+    footerResolution: "Aanbevolen resolutie: 800 × 600 of hoger",
+    footerCookies: "Deze website gebruikt geen cookies.",
+
+    popupTitle: "DAAN TECH INTERNETBERICHT",
+    popupHello: "Hallo internetbezoeker!",
+    popupQuestion: "Volg je Daan Tech al op social media?",
+    close: "SLUITEN"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* YUGOSLAVIA                                              */
+  /* ======================================================= */
+
+  yu: {
+
+    topBar: "Zvanična Daan Tech početna stranica",
+    lastUpdated: "Poslednje ažuriranje: 5. septembar 2026",
+    header: "DOBRODOŠLI NA DAAN TECH",
+    subtitle: "Tehnologija, eksperimenti i čudne stvari sa Interneta",
+    marquee: "★ DOBRODOŠLI NA DAAN TECH ★ NOVI PROJEKTI USKORO ★ AI EKSPERIMENTI ★ STARI RAČUNARI ★ KOD ★ INTERNET ★",
+
+    home: "POČETNA",
+    socials: "SOCIALS",
+    projects: "PROJEKTI",
+    contact: "KONTAKT",
+
+    latestProject: "NAJNOVIJI PROJEKAT",
+    chooseLanguage: "IZABERI JEZIK",
+    current: "Trenutno:",
+    visitorCounter: "BROJAČ POSETA",
+    visitor: "Vi ste posetilac",
+    quickLinks: "BRZI LINKOVI",
+    homePage: "Početna strana",
+    latestProjects: "Najnoviji projekti",
+    sendEmail: "Pošalji E-Mail",
+
+    homeTitle: "Dobrodošli na Daan Tech!",
+    homeWelcome: "Dobrodošli na zvanični retro sajt Daan Tech!",
+    homeP1: "Daan Tech je o tehnologiji, čudnim Internet eksperimentima, programiranju, projektima, veštačkoj inteligenciji i staroj tehnologiji.",
+    homeP2: "Ovaj sajt je moj mali deo World Wide Web-a gde čuvam eksperimente, računarske projekte, ideje za kod i tehnološke video snimke.",
+    homeP3: "Ovde možete pronaći stare računare, nove AI alate, neobičan softver, eksperimente u pregledaču i čudna Internet otkrića.",
+
+    noticeTitle: "OBAVEŠTENJE:",
+    notice: "Ovaj sajt može sadržati nedovršene projekte, eksperimentalnu tehnologiju, pokvarene linkove i čudan HTML.",
+
+    latestNews: "Najnovije vesti",
+
+    socialsTitle: "Dobrodošli na SOCIALS stranicu!",
+    socialsIntro: "Ovde možete pronaći sve linkove do mojih društvenih mreža.",
+    comingSoon: "USKORO SE VRAĆA",
+
+    projectsTitle: "Daan Tech Projekti",
+    projectsIntro1: "Dobrodošli u arhivu Daan Tech projekata.",
+    projectsIntro2: "Ovde možete pronaći eksperimente, softver, staru tehnologiju, AI i druge čudne stvari koje sam napravio.",
+
+    contactTitle: "Kontaktirajte Daan Tech",
+    contactIntro1: "Želite da razgovarate o tehnologiji, predložite projekat ili saradnju?",
+    contactIntro2: "Možete mi poslati e-mail na:",
+    emailBox: "E-MAIL DAAN TECH",
+    emailHelp: "Kliknite na adresu iznad da otvorite vaš e-mail program.",
+    emailButton: "POŠALJI MI E-MAIL",
+
+    businessTitle: "Posao / Saradnja",
+    business: "Za saradnju, projekte, proizvode, sponzorstva ili druga poslovna pitanja slobodno mi pošaljite e-mail.",
+
+    footerInternet: "Najbolje izgleda na računaru povezanom na Internet.",
+    footerResolution: "Preporučena rezolucija: 800 × 600 ili više",
+    footerCookies: "Ovaj sajt ne koristi kolačiće.",
+
+    popupTitle: "DAAN TECH INTERNET PORUKA",
+    popupHello: "Zdravo Internet posetioče!",
+    popupQuestion: "Da li već pratite Daan Tech na društvenim mrežama?",
+    close: "ZATVORI"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* FRANCAIS                                                */
+  /* ======================================================= */
+
+  fr: {
+
+    topBar: "Page officielle de Daan Tech",
+    lastUpdated: "Dernière mise à jour : 5 septembre 2026",
+    header: "BIENVENUE SUR DAAN TECH",
+    subtitle: "Technologie, expériences et choses étranges d'Internet",
+    marquee: "★ BIENVENUE SUR DAAN TECH ★ NOUVEAUX PROJETS BIENTÔT ★ EXPÉRIENCES IA ★ VIEUX ORDINATEURS ★ CODE ★ INTERNET ★",
+
+    home: "ACCUEIL",
+    socials: "SOCIALS",
+    projects: "PROJETS",
+    contact: "CONTACT",
+
+    latestProject: "DERNIER PROJET",
+    chooseLanguage: "CHOISIR LA LANGUE",
+    current: "Actuel :",
+    visitorCounter: "COMPTEUR VISITEURS",
+    visitor: "Vous êtes le visiteur",
+    quickLinks: "LIENS RAPIDES",
+    homePage: "Page d'accueil",
+    latestProjects: "Derniers projets",
+    sendEmail: "Envoyer un e-mail",
+
+    homeTitle: "Bienvenue sur Daan Tech !",
+    homeWelcome: "Bienvenue sur le site rétro officiel de Daan Tech !",
+    homeP1: "Daan Tech parle de technologie, d'expériences Internet étranges, de code, de projets, d'intelligence artificielle et de vieille technologie.",
+    homeP2: "Ce site est mon petit coin du World Wide Web où je rassemble des expériences, des projets informatiques et des vidéos technologiques.",
+    homeP3: "Vous trouverez ici de vieux ordinateurs, de nouveaux outils IA, des logiciels inhabituels, des expériences navigateur et d'étranges découvertes Internet.",
+
+    noticeTitle: "AVIS :",
+    notice: "Ce site peut contenir des projets inachevés, des technologies expérimentales, des liens cassés et du HTML étrange.",
+
+    latestNews: "Dernières nouvelles",
+
+    socialsTitle: "Bienvenue dans l'onglet SOCIALS !",
+    socialsIntro: "Vous trouverez ici tous les liens vers mes réseaux sociaux.",
+    comingSoon: "BIENTÔT DE RETOUR",
+
+    projectsTitle: "Projets Daan Tech",
+    projectsIntro1: "Bienvenue dans les archives des projets Daan Tech.",
+    projectsIntro2: "Vous trouverez ici des expériences, des logiciels, de la vieille technologie, de l'IA et d'autres choses étranges que j'ai construites.",
+
+    contactTitle: "Contacter Daan Tech",
+    contactIntro1: "Vous voulez parler technologie, proposer un projet ou discuter d'une collaboration ?",
+    contactIntro2: "Vous pouvez m'envoyer un e-mail à :",
+    emailBox: "E-MAIL DAAN TECH",
+    emailHelp: "Cliquez sur l'adresse ci-dessus pour ouvrir votre logiciel de messagerie.",
+    emailButton: "ENVOYEZ-MOI UN E-MAIL",
+
+    businessTitle: "Business / Collaborations",
+    business: "Pour les collaborations, projets, produits, sponsorings ou autres demandes professionnelles, envoyez-moi un e-mail.",
+
+    footerInternet: "À consulter de préférence sur un ordinateur connecté à Internet.",
+    footerResolution: "Résolution recommandée : 800 × 600 ou plus",
+    footerCookies: "Ce site n'utilise pas de cookies.",
+
+    popupTitle: "MESSAGE INTERNET DAAN TECH",
+    popupHello: "Bonjour visiteur Internet !",
+    popupQuestion: "Suivez-vous déjà Daan Tech sur les réseaux sociaux ?",
+    close: "FERMER"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* CHINESE                                                 */
+  /* ======================================================= */
+
+  zh: {
+
+    topBar: "Daan Tech 官方主页",
+    lastUpdated: "最后更新：2026年9月5日",
+    header: "欢迎来到 DAAN TECH",
+    subtitle: "科技、实验以及互联网上的奇怪东西",
+    marquee: "★ 欢迎来到 DAAN TECH ★ 新项目即将推出 ★ AI 实验 ★ 老电脑 ★ 编程 ★ 互联网 ★",
+
+    home: "主页",
+    socials: "社交媒体",
+    projects: "项目",
+    contact: "联系",
+
+    latestProject: "最新项目",
+    chooseLanguage: "选择语言",
+    current: "当前：",
+    visitorCounter: "访客计数器",
+    visitor: "您是第",
+    quickLinks: "快速链接",
+    homePage: "主页",
+    latestProjects: "最新项目",
+    sendEmail: "发送邮件",
+
+    homeTitle: "欢迎来到 Daan Tech！",
+    homeWelcome: "欢迎来到 Daan Tech 官方复古网站！",
+    homeP1: "Daan Tech 关注科技、奇怪的互联网实验、编程、项目、人工智能、老技术和有趣的科技创意。",
+    homeP2: "这是我在万维网上的小角落，用来收藏实验、电脑项目、编程想法和科技视频。",
+    homeP3: "你可以在这里找到老电脑、新的 AI 工具、奇怪的软件、浏览器实验、硬件和互联网发现。",
+
+    noticeTitle: "注意：",
+    notice: "本网站可能包含未完成的项目、实验性技术、失效链接和奇怪的 HTML。",
+
+    latestNews: "最新消息",
+
+    socialsTitle: "欢迎来到 SOCIALS 页面！",
+    socialsIntro: "这里可以找到我的所有社交媒体链接。",
+    comingSoon: "即将回归",
+
+    projectsTitle: "Daan Tech 项目",
+    projectsIntro1: "欢迎来到 Daan Tech 项目档案。",
+    projectsIntro2: "这里可以找到实验、软件、老技术、AI 和我制作的其他奇怪东西。",
+
+    contactTitle: "联系 Daan Tech",
+    contactIntro1: "想讨论科技、提出奇怪的项目想法或合作吗？",
+    contactIntro2: "你可以发送电子邮件到：",
+    emailBox: "电子邮件 DAAN TECH",
+    emailHelp: "点击上面的地址打开你的电子邮件程序。",
+    emailButton: "发送电子邮件",
+
+    businessTitle: "商务 / 合作",
+    business: "如需合作、项目、产品、赞助或其他商务咨询，请发送电子邮件。",
+
+    footerInternet: "最好在连接互联网的电脑上浏览。",
+    footerResolution: "推荐分辨率：800 × 600 或更高",
+    footerCookies: "本网站不使用 Cookie。",
+
+    popupTitle: "DAAN TECH 互联网消息",
+    popupHello: "你好，互联网访客！",
+    popupQuestion: "你已经关注 Daan Tech 的社交媒体了吗？",
+    close: "关闭"
+
+  },
+
+
+
+  /* ======================================================= */
+  /* RUSSIAN                                                 */
+  /* ======================================================= */
+
+  ru: {
+
+    topBar: "Официальная домашняя страница Daan Tech",
+    lastUpdated: "Последнее обновление: 5 сентября 2026",
+    header: "ДОБРО ПОЖАЛОВАТЬ В DAAN TECH",
+    subtitle: "Технологии, эксперименты и странности из Интернета",
+    marquee: "★ ДОБРО ПОЖАЛОВАТЬ В DAAN TECH ★ НОВЫЕ ПРОЕКТЫ СКОРО ★ ЭКСПЕРИМЕНТЫ С ИИ ★ СТАРЫЕ КОМПЬЮТЕРЫ ★ КОД ★ ИНТЕРНЕТ ★",
+
+    home: "ГЛАВНАЯ",
+    socials: "СОЦСЕТИ",
+    projects: "ПРОЕКТЫ",
+    contact: "КОНТАКТ",
+
+    latestProject: "ПОСЛЕДНИЙ ПРОЕКТ",
+    chooseLanguage: "ВЫБРАТЬ ЯЗЫК",
+    current: "Текущий:",
+    visitorCounter: "СЧЁТЧИК ПОСЕТИТЕЛЕЙ",
+    visitor: "Вы посетитель",
+    quickLinks: "БЫСТРЫЕ ССЫЛКИ",
+    homePage: "Главная страница",
+    latestProjects: "Последние проекты",
+    sendEmail: "Отправить E-Mail",
+
+    homeTitle: "Добро пожаловать в Daan Tech!",
+    homeWelcome: "Добро пожаловать на официальный ретро-сайт Daan Tech!",
+    homeP1: "Daan Tech — это технологии, странные интернет-эксперименты, программирование, проекты, искусственный интеллект и старая техника.",
+    homeP2: "Этот сайт — мой маленький уголок Всемирной паутины для экспериментов, компьютерных проектов, идей и технологических видео.",
+    homeP3: "Здесь можно найти старые компьютеры, новые инструменты ИИ, необычные программы, браузерные эксперименты и странные интернет-находки.",
+
+    noticeTitle: "ВНИМАНИЕ:",
+    notice: "Этот сайт может содержать незавершённые проекты, экспериментальные технологии, сломанные ссылки и странный HTML.",
+
+    latestNews: "Последние новости",
+
+    socialsTitle: "Добро пожаловать во вкладку SOCIALS!",
+    socialsIntro: "Здесь находятся ссылки на все мои социальные сети.",
+    comingSoon: "СКОРО ВЕРНЁТСЯ",
+
+    projectsTitle: "Проекты Daan Tech",
+    projectsIntro1: "Добро пожаловать в архив проектов Daan Tech.",
+    projectsIntro2: "Здесь можно найти эксперименты, программы, старую технику, ИИ и другие странные вещи, которые я сделал.",
+
+    contactTitle: "Связаться с Daan Tech",
+    contactIntro1: "Хотите поговорить о технологиях, предложить проект или обсудить сотрудничество?",
+    contactIntro2: "Вы можете отправить мне письмо на:",
+    emailBox: "E-MAIL DAAN TECH",
+    emailHelp: "Нажмите на адрес выше, чтобы открыть почтовую программу.",
+    emailButton: "ОТПРАВИТЬ E-MAIL",
+
+    businessTitle: "Бизнес / Сотрудничество",
+    business: "Для сотрудничества, проектов, продуктов, спонсорства и других деловых вопросов отправьте мне e-mail.",
+
+    footerInternet: "Лучше всего просматривать на компьютере, подключённом к Интернету.",
+    footerResolution: "Рекомендуемое разрешение: 800 × 600 или выше",
+    footerCookies: "Этот сайт не использует cookies.",
+
+    popupTitle: "ИНТЕРНЕТ-СООБЩЕНИЕ DAAN TECH",
+    popupHello: "Привет, посетитель Интернета!",
+    popupQuestion: "Вы уже подписаны на Daan Tech в социальных сетях?",
+    close: "ЗАКРЫТЬ"
+
+  }
+
+};
+
+
+
+function setLanguage(languageCode) {
+
+  if (!translations[languageCode]) {
+    languageCode = "en";
+  }
+
+  currentLanguageCode =
+    languageCode;
+
+  document.documentElement.lang =
+    languageCode;
+
+
+  var t =
+    translations[languageCode];
+
+
+  document.getElementById("topBarText").textContent =
+    t.topBar;
+
+  document.getElementById("lastUpdatedText").textContent =
+    t.lastUpdated;
+
+  document.getElementById("headerTitle").textContent =
+    t.header;
+
+  document.getElementById("headerSubtitle").textContent =
+    t.subtitle;
+
+  document.getElementById("marqueeText").textContent =
+    t.marquee;
+
+
+  document.getElementById("navHome").textContent =
+    t.home;
+
+  document.getElementById("navSocials").textContent =
+    t.socials;
+
+  document.getElementById("navProjects").textContent =
+    t.projects;
+
+  document.getElementById("navContact").textContent =
+    t.contact;
+
+
+  document.getElementById("latestProjectBoxTitle").textContent =
+    t.latestProject;
+
+  document.getElementById("languageBoxTitle").textContent =
+    t.chooseLanguage;
+
+  document.getElementById("currentLanguageLabel").textContent =
+    t.current;
+
+  document.getElementById("currentLanguage").textContent =
+    languageNames[languageCode];
+
+
+  document.getElementById("visitorBoxTitle").textContent =
+    t.visitorCounter;
+
+  document.getElementById("visitorText").textContent =
+    t.visitor;
+
+
+  document.getElementById("quickLinksTitle").textContent =
+    t.quickLinks;
+
+  document.getElementById("quickHome").textContent =
+    t.homePage;
+
+  document.getElementById("quickProjects").textContent =
+    t.latestProjects;
+
+  document.getElementById("quickEmail").textContent =
+    t.sendEmail;
+
+
+  document.getElementById("homeTitle").textContent =
+    t.homeTitle;
+
+  document.getElementById("homeWelcome").innerHTML =
+    t.homeWelcome.replace(
+      "Daan Tech",
+      "<b>Daan Tech</b>"
+    );
+
+  document.getElementById("homeParagraph1").textContent =
+    t.homeP1;
+
+  document.getElementById("homeParagraph2").textContent =
+    t.homeP2;
+
+  document.getElementById("homeParagraph3").textContent =
+    t.homeP3;
+
+  document.getElementById("noticeTitle").textContent =
+    t.noticeTitle;
+
+  document.getElementById("noticeText").textContent =
+    t.notice;
+
+  document.getElementById("latestNewsTitle").textContent =
+    t.latestNews;
+
+
+  document.getElementById("socialsTitle").textContent =
+    t.socialsTitle;
+
+  document.getElementById("socialsIntro").textContent =
+    t.socialsIntro;
+
+  document.getElementById("twitchComingSoon").textContent =
+    t.comingSoon;
+
+
+  document.getElementById("projectsTitle").textContent =
+    t.projectsTitle;
+
+  document.getElementById("projectsIntro1").textContent =
+    t.projectsIntro1;
+
+  document.getElementById("projectsIntro2").textContent =
+    t.projectsIntro2;
+
+
+  document.getElementById("contactTitle").textContent =
+    t.contactTitle;
+
+  document.getElementById("contactIntro1").textContent =
+    t.contactIntro1;
+
+  document.getElementById("contactIntro2").textContent =
+    t.contactIntro2;
+
+  document.getElementById("emailBoxTitle").textContent =
+    t.emailBox;
+
+  document.getElementById("emailHelpText").textContent =
+    t.emailHelp;
+
+  document.getElementById("emailButton").textContent =
+    t.emailButton;
+
+  document.getElementById("businessTitle").textContent =
+    t.businessTitle;
+
+  document.getElementById("businessText").textContent =
+    t.business;
+
+
+  document.getElementById("footerInternet").textContent =
+    t.footerInternet;
+
+  document.getElementById("footerResolution").textContent =
+    t.footerResolution;
+
+  document.getElementById("footerCookies").textContent =
+    t.footerCookies;
+
+
+  document.getElementById("popupTitle").textContent =
+    t.popupTitle;
+
+  document.getElementById("popupHello").textContent =
+    t.popupHello;
+
+  document.getElementById("popupQuestion").textContent =
+    t.popupQuestion;
+
+  document.getElementById("popupCloseButton").textContent =
+    t.close;
+
+
+  var languageButtons =
+    document.getElementsByClassName("language-link");
+
+
+  for (var i = 0; i < languageButtons.length; i++) {
+
+    languageButtons[i].classList.remove(
+      "active-language"
+    );
+
+    if (
+      languageButtons[i].getAttribute("data-language") ===
+      languageCode
+    ) {
+
+      languageButtons[i].classList.add(
+        "active-language"
+      );
+
+    }
+
+  }
+
+
+  localStorage.setItem(
+    "daanTechLanguage",
+    languageCode
+  );
+
+
+  updateClippy(
+    currentPage
+  );
+
+}
+
+
+
+/* ========================================================= */
 /* PAGE NAVIGATION                                           */
 /* ========================================================= */
 
 function showPage(pageName) {
 
+  currentPage =
+    pageName;
+
+
   var pages =
     document.getElementsByClassName("site-page");
 
+
   for (var i = 0; i < pages.length; i++) {
-    pages[i].style.display = "none";
+
+    pages[i].style.display =
+      "none";
+
   }
+
 
   var selectedPage =
-    document.getElementById("page-" + pageName);
+    document.getElementById(
+      "page-" + pageName
+    );
+
 
   if (selectedPage) {
-    selectedPage.style.display = "block";
+
+    selectedPage.style.display =
+      "block";
+
   }
 
-  updateClippy(pageName);
 
-  window.scrollTo(0, 0);
+  updateClippy(
+    pageName
+  );
+
+
+  window.scrollTo(
+    0,
+    0
+  );
+
 }
+
 
 
 /* ========================================================= */
@@ -1404,20 +2575,31 @@ function showPage(pageName) {
 function updateClippy(pageName) {
 
   var speech =
-    document.getElementById("clippySpeech");
+    document.getElementById(
+      "clippySpeech"
+    );
+
 
   if (!speech) {
     return;
   }
 
+
+  /*
+    Clippy stays English for the authentic old software vibe.
+  */
+
   var message =
     clippyMessages[pageName] ||
     "Welcome to Daan Tech!";
 
+
   speech.innerHTML =
     '<span class="clippy-name">Clippy:</span> ' +
     message;
+
 }
+
 
 
 function clippySaySomething() {
@@ -1428,16 +2610,25 @@ function clippySaySomething() {
       clippyRandomMessages.length
     );
 
+
   var message =
-    clippyRandomMessages[randomNumber];
+    clippyRandomMessages[
+      randomNumber
+    ];
+
 
   var speech =
-    document.getElementById("clippySpeech");
+    document.getElementById(
+      "clippySpeech"
+    );
+
 
   speech.innerHTML =
     '<span class="clippy-name">Clippy:</span> ' +
     message;
+
 }
+
 
 
 /* ========================================================= */
@@ -1449,36 +2640,56 @@ function escapeHTML(text) {
   var div =
     document.createElement("div");
 
-  div.textContent = text;
+  div.textContent =
+    text;
 
   return div.innerHTML;
+
 }
 
 
+
 /* ========================================================= */
-/* RENDER NEWS                                               */
+/* LATEST NEWS                                               */
 /* ========================================================= */
 
 function renderLatestNews() {
 
   var container =
-    document.getElementById("latestNews");
+    document.getElementById(
+      "latestNews"
+    );
 
-  container.innerHTML = "";
+
+  container.innerHTML =
+    "";
+
 
   var newsToShow =
-    latestNews.slice(0, 3);
+    latestNews.slice(
+      0,
+      3
+    );
 
-  for (var i = 0; i < newsToShow.length; i++) {
+
+  for (
+    var i = 0;
+    i < newsToShow.length;
+    i++
+  ) {
 
     var news =
       newsToShow[i];
 
+
     var item =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
 
     item.className =
       "news-item";
+
 
     item.innerHTML =
 
@@ -1500,12 +2711,21 @@ function renderLatestNews() {
         escapeHTML(news.description) +
       '</p>';
 
-    container.appendChild(item);
 
-    if (i < newsToShow.length - 1) {
+    container.appendChild(
+      item
+    );
+
+
+    if (
+      i <
+      newsToShow.length - 1
+    ) {
 
       container.appendChild(
-        document.createElement("hr")
+        document.createElement(
+          "hr"
+        )
       );
 
     }
@@ -1513,6 +2733,7 @@ function renderLatestNews() {
   }
 
 }
+
 
 
 /* ========================================================= */
@@ -1524,29 +2745,41 @@ function getProjectStatusClass(status) {
   var statusUpper =
     status.toUpperCase();
 
+
   if (
     statusUpper === "ACTIVE" ||
     statusUpper === "ONLINE" ||
     statusUpper === "FINISHED"
   ) {
+
     return "project-active";
+
   }
+
 
   if (
     statusUpper === "IN PROGRESS" ||
     statusUpper === "TESTING"
   ) {
+
     return "project-progress";
+
   }
+
 
   if (
     statusUpper === "COMING SOON"
   ) {
+
     return "project-soon";
+
   }
 
+
   return "";
+
 }
+
 
 
 /* ========================================================= */
@@ -1556,7 +2789,10 @@ function getProjectStatusClass(status) {
 function createProjectImage(project) {
 
   var wrapper =
-    document.createElement("div");
+    document.createElement(
+      "div"
+    );
+
 
   if (
     project.image &&
@@ -1564,7 +2800,10 @@ function createProjectImage(project) {
   ) {
 
     var image =
-      document.createElement("img");
+      document.createElement(
+        "img"
+      );
+
 
     image.src =
       project.image;
@@ -1575,34 +2814,48 @@ function createProjectImage(project) {
     image.className =
       "project-picture";
 
-    image.onerror = function() {
 
-      var placeholder =
-        document.createElement("div");
+    image.onerror =
+      function() {
 
-      placeholder.className =
-        "project-placeholder";
+        var placeholder =
+          document.createElement(
+            "div"
+          );
 
-      placeholder.textContent =
-        "[ NO IMAGE AVAILABLE ]";
 
-      if (image.parentNode) {
+        placeholder.className =
+          "project-placeholder";
 
-        image.parentNode.replaceChild(
-          placeholder,
-          image
-        );
+        placeholder.textContent =
+          "[ NO IMAGE AVAILABLE ]";
 
-      }
 
-    };
+        if (
+          image.parentNode
+        ) {
 
-    wrapper.appendChild(image);
+          image.parentNode.replaceChild(
+            placeholder,
+            image
+          );
+
+        }
+
+      };
+
+
+    wrapper.appendChild(
+      image
+    );
 
   } else {
 
     var placeholder =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
+
 
     placeholder.className =
       "project-placeholder";
@@ -1610,32 +2863,51 @@ function createProjectImage(project) {
     placeholder.textContent =
       "[ NO IMAGE AVAILABLE ]";
 
-    wrapper.appendChild(placeholder);
+
+    wrapper.appendChild(
+      placeholder
+    );
 
   }
 
+
   return wrapper;
+
 }
 
 
+
 /* ========================================================= */
-/* RENDER PROJECTS                                           */
+/* PROJECTS                                                  */
 /* ========================================================= */
 
 function renderProjects() {
 
   var container =
-    document.getElementById("projectsContainer");
+    document.getElementById(
+      "projectsContainer"
+    );
 
-  container.innerHTML = "";
 
-  for (var i = 0; i < projects.length; i++) {
+  container.innerHTML =
+    "";
+
+
+  for (
+    var i = 0;
+    i < projects.length;
+    i++
+  ) {
 
     var project =
       projects[i];
 
+
     var projectBlock =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
+
 
     projectBlock.className =
       "project-block";
@@ -1644,17 +2916,27 @@ function renderProjects() {
       "project-" + i;
 
 
+    /* TITLE */
+
     var title =
-      document.createElement("h3");
+      document.createElement(
+        "h3"
+      );
 
     title.textContent =
       project.title;
 
-    projectBlock.appendChild(title);
+    projectBlock.appendChild(
+      title
+    );
 
+
+    /* DATE */
 
     var date =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
 
     date.className =
       "project-date";
@@ -1662,46 +2944,80 @@ function renderProjects() {
     date.textContent =
       project.date;
 
-    projectBlock.appendChild(date);
+    projectBlock.appendChild(
+      date
+    );
 
+
+    /* STATUS */
 
     var statusParagraph =
-      document.createElement("p");
+      document.createElement(
+        "p"
+      );
+
 
     statusParagraph.innerHTML =
       "<b>Status:</b> ";
 
 
     var status =
-      document.createElement("span");
+      document.createElement(
+        "span"
+      );
+
 
     status.className =
       getProjectStatusClass(
         project.status
       );
 
+
     status.textContent =
       project.status;
 
-    statusParagraph.appendChild(status);
 
-    projectBlock.appendChild(statusParagraph);
+    statusParagraph.appendChild(
+      status
+    );
 
+
+    projectBlock.appendChild(
+      statusParagraph
+    );
+
+
+    /* IMAGE */
 
     var projectImage =
-      createProjectImage(project);
+      createProjectImage(
+        project
+      );
 
-    projectBlock.appendChild(projectImage);
 
+    projectBlock.appendChild(
+      projectImage
+    );
+
+
+    /* DESCRIPTION */
 
     var description =
-      document.createElement("p");
+      document.createElement(
+        "p"
+      );
+
 
     description.textContent =
       project.description;
 
-    projectBlock.appendChild(description);
 
+    projectBlock.appendChild(
+      description
+    );
+
+
+    /* OPTIONAL LINK */
 
     if (
       project.link &&
@@ -1709,10 +3025,16 @@ function renderProjects() {
     ) {
 
       var linkParagraph =
-        document.createElement("p");
+        document.createElement(
+          "p"
+        );
+
 
       var link =
-        document.createElement("a");
+        document.createElement(
+          "a"
+        );
+
 
       link.href =
         project.link;
@@ -1727,18 +3049,33 @@ function renderProjects() {
         project.linkText ||
         "View project";
 
-      linkParagraph.appendChild(link);
 
-      projectBlock.appendChild(linkParagraph);
+      linkParagraph.appendChild(
+        link
+      );
+
+
+      projectBlock.appendChild(
+        linkParagraph
+      );
 
     }
 
-    container.appendChild(projectBlock);
 
-    if (i < projects.length - 1) {
+    container.appendChild(
+      projectBlock
+    );
+
+
+    if (
+      i <
+      projects.length - 1
+    ) {
 
       container.appendChild(
-        document.createElement("hr")
+        document.createElement(
+          "hr"
+        )
       );
 
     }
@@ -1748,8 +3085,9 @@ function renderProjects() {
 }
 
 
+
 /* ========================================================= */
-/* LATEST PROJECT SIDEBAR                                    */
+/* LATEST PROJECT                                            */
 /* ========================================================= */
 
 function renderLatestProject() {
@@ -1759,10 +3097,16 @@ function renderLatestProject() {
       "latestProjectSidebar"
     );
 
-  container.innerHTML = "";
+
+  container.innerHTML =
+    "";
+
 
   var newLabel =
-    document.createElement("span");
+    document.createElement(
+      "span"
+    );
+
 
   newLabel.className =
     "new blink";
@@ -1770,67 +3114,108 @@ function renderLatestProject() {
   newLabel.textContent =
     "NEW!";
 
-  container.appendChild(newLabel);
 
   container.appendChild(
-    document.createElement("br")
+    newLabel
+  );
+
+
+  container.appendChild(
+    document.createElement(
+      "br"
+    )
   );
 
 
   var title =
-    document.createElement("b");
+    document.createElement(
+      "b"
+    );
+
 
   title.textContent =
     latestProject.title;
 
-  container.appendChild(title);
+
+  container.appendChild(
+    title
+  );
 
 
   var statusParagraph =
-    document.createElement("p");
+    document.createElement(
+      "p"
+    );
+
 
   var statusTitle =
-    document.createElement("b");
+    document.createElement(
+      "b"
+    );
+
 
   statusTitle.textContent =
     "Status: ";
 
-  statusParagraph.appendChild(statusTitle);
+
+  statusParagraph.appendChild(
+    statusTitle
+  );
 
 
   var status =
-    document.createElement("span");
+    document.createElement(
+      "span"
+    );
+
 
   status.className =
     getProjectStatusClass(
       latestProject.status
     );
 
+
   status.textContent =
     latestProject.status;
 
-  statusParagraph.appendChild(status);
 
-  container.appendChild(statusParagraph);
+  statusParagraph.appendChild(
+    status
+  );
+
+
+  container.appendChild(
+    statusParagraph
+  );
 
 
   var description =
-    document.createElement("p");
+    document.createElement(
+      "p"
+    );
+
 
   description.textContent =
     latestProject.description;
 
-  container.appendChild(description);
+
+  container.appendChild(
+    description
+  );
 
 
   var link =
-    document.createElement("a");
+    document.createElement(
+      "a"
+    );
+
 
   link.href =
     "#";
 
   link.textContent =
     "Read more...";
+
 
   link.onclick =
     function(event) {
@@ -1841,8 +3226,13 @@ function renderLatestProject() {
 
     };
 
-  container.appendChild(link);
+
+  container.appendChild(
+    link
+  );
+
 }
+
 
 
 /* ========================================================= */
@@ -1851,7 +3241,10 @@ function renderLatestProject() {
 
 function openLatestProject() {
 
-  showPage("projects");
+  showPage(
+    "projects"
+  );
+
 
   setTimeout(
     function() {
@@ -1862,14 +3255,19 @@ function openLatestProject() {
           latestProject.projectNumber
         );
 
+
       if (project) {
+
         project.scrollIntoView();
+
       }
 
     },
     10
   );
+
 }
+
 
 
 /* ========================================================= */
@@ -1883,30 +3281,43 @@ function updateVisitorCounter() {
       "daanTechVisitorCount"
     );
 
-  if (storedCount === null) {
 
-    storedCount = 4821;
+  if (
+    storedCount === null
+  ) {
+
+    storedCount =
+      4821;
 
   } else {
 
     storedCount =
-      parseInt(storedCount, 10);
+      parseInt(
+        storedCount,
+        10
+      );
 
   }
+
 
   var visitedBefore =
     sessionStorage.getItem(
       "daanTechVisited"
     );
 
-  if (!visitedBefore) {
+
+  if (
+    !visitedBefore
+  ) {
 
     storedCount++;
+
 
     localStorage.setItem(
       "daanTechVisitorCount",
       storedCount
     );
+
 
     sessionStorage.setItem(
       "daanTechVisited",
@@ -1915,21 +3326,29 @@ function updateVisitorCounter() {
 
   }
 
+
   var counter =
     document.getElementById(
       "visitorCounter"
     );
 
-  if (counter) {
+
+  if (
+    counter
+  ) {
 
     counter.innerText =
-      String(storedCount).padStart(
+      String(
+        storedCount
+      ).padStart(
         6,
         "0"
       );
 
   }
+
 }
+
 
 
 /* ========================================================= */
@@ -1943,10 +3362,18 @@ function showSocialPopup() {
       "socialPopup"
     );
 
-  if (popup) {
-    popup.style.display = "block";
+
+  if (
+    popup
+  ) {
+
+    popup.style.display =
+      "block";
+
   }
+
 }
+
 
 
 function closeSocialPopup() {
@@ -1956,47 +3383,99 @@ function closeSocialPopup() {
       "socialPopup"
     );
 
-  if (popup) {
-    popup.style.display = "none";
+
+  if (
+    popup
+  ) {
+
+    popup.style.display =
+      "none";
+
   }
+
 }
+
 
 
 function openSocialsFromPopup() {
 
   closeSocialPopup();
 
-  showPage("socials");
+  showPage(
+    "socials"
+  );
+
 }
+
 
 
 /* ========================================================= */
 /* START WEBSITE                                             */
 /* ========================================================= */
 
-window.onload = function() {
+window.onload =
+  function() {
 
-  showPage("home");
 
-  renderLatestNews();
+    renderLatestNews();
 
-  renderLatestProject();
+    renderLatestProject();
 
-  renderProjects();
+    renderProjects();
 
-  updateVisitorCounter();
+    updateVisitorCounter();
 
-  updateClippy("home");
 
-  setTimeout(
-    function() {
+    /*
+      DEFAULT LANGUAGE = ENGLISH
 
-      showSocialPopup();
+      If someone selected another language before,
+      remember their choice in the browser.
+    */
 
-    },
-    5000
-  );
-};
+    var savedLanguage =
+      localStorage.getItem(
+        "daanTechLanguage"
+      );
+
+
+    if (
+      savedLanguage &&
+      translations[savedLanguage]
+    ) {
+
+      setLanguage(
+        savedLanguage
+      );
+
+    } else {
+
+      setLanguage(
+        "en"
+      );
+
+    }
+
+
+    showPage(
+      "home"
+    );
+
+
+    /*
+      SOCIALS POPUP AFTER 5 SECONDS
+    */
+
+    setTimeout(
+      function() {
+
+        showSocialPopup();
+
+      },
+      5000
+    );
+
+  };
 
 </script>
 
