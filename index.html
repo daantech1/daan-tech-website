@@ -422,6 +422,11 @@ p {
   font-size: 12px;
 }
 
+.contact-email {
+  font-size: 15px;
+  font-weight: bold;
+}
+
 
 /* ========================================================= */
 /* SOCIAL POPUP                                              */
@@ -491,6 +496,70 @@ p {
 
 
 /* ========================================================= */
+/* CLIPPY                                                    */
+/* ========================================================= */
+
+.clippy-helper {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  width: 190px;
+  z-index: 9000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.clippy-speech {
+  position: relative;
+  background: #ffffcc;
+  border: 1px solid #555555;
+  padding: 8px;
+  font-size: 11px;
+  line-height: 14px;
+  min-height: 44px;
+  box-shadow: 2px 2px 0 #888888;
+  margin-bottom: 8px;
+}
+
+.clippy-speech:after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  bottom: -10px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 10px solid #555555;
+}
+
+.clippy-speech:before {
+  content: "";
+  position: absolute;
+  left: 29px;
+  bottom: -8px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 9px solid #ffffcc;
+  z-index: 2;
+}
+
+.clippy-image {
+  width: 85px;
+  height: auto;
+  display: block;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.clippy-name {
+  font-weight: bold;
+  color: #003366;
+}
+
+
+/* ========================================================= */
 /* OTHER                                                     */
 /* ========================================================= */
 
@@ -528,11 +597,16 @@ hr {
 
 
 /* ========================================================= */
-/* INTENTIONALLY OLD-SCHOOL FIXED WIDTH                      */
+/* OLD-SCHOOL FIXED WIDTH                                    */
 /* ========================================================= */
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1050px) {
+  .clippy-helper {
+    display: none;
+  }
+}
 
+@media screen and (max-width: 780px) {
   body {
     min-width: 780px;
   }
@@ -541,7 +615,6 @@ hr {
     margin-left: 8px;
     margin-right: 8px;
   }
-
 }
 
 </style>
@@ -551,16 +624,12 @@ hr {
 
 <div class="page">
 
-  <!-- TOP BAR -->
-
   <div class="topbar">
     Official Daan Tech Homepage
     &nbsp; | &nbsp;
     Last updated: 5 September 2026
   </div>
 
-
-  <!-- HEADER -->
 
   <div class="header">
 
@@ -575,8 +644,6 @@ hr {
   </div>
 
 
-  <!-- MOVING MESSAGE -->
-
   <marquee scrollamount="3">
     ★ WELCOME TO DAAN TECH ★
     NEW PROJECTS COMING SOON ★
@@ -586,8 +653,6 @@ hr {
     INTERNET STUFF ★
   </marquee>
 
-
-  <!-- NAVIGATION -->
 
   <div class="nav">
 
@@ -610,8 +675,6 @@ hr {
   </div>
 
 
-  <!-- MAIN LAYOUT -->
-
   <div class="layout">
 
 
@@ -621,8 +684,6 @@ hr {
 
     <div class="sidebar">
 
-
-      <!-- LATEST PROJECT -->
 
       <div class="box">
 
@@ -634,13 +695,10 @@ hr {
           class="box-content"
           id="latestProjectSidebar"
         >
-          <!-- Inserted automatically -->
         </div>
 
       </div>
 
-
-      <!-- VISITOR COUNTER -->
 
       <div class="box">
 
@@ -665,8 +723,6 @@ hr {
 
       </div>
 
-
-      <!-- QUICK LINKS -->
 
       <div class="box">
 
@@ -708,7 +764,7 @@ hr {
             GitHub
           </a>
 
-          <a href="#" onclick="showPage('contact'); return false;">
+          <a href="mailto:business.daantech@gmail.com">
             Send E-Mail
           </a>
 
@@ -720,15 +776,13 @@ hr {
 
 
     <!-- =================================================== -->
-    <!-- MAIN CONTENT                                        -->
+    <!-- CONTENT                                             -->
     <!-- =================================================== -->
 
     <div class="content">
 
 
-      <!-- ================================================= -->
-      <!-- HOME                                              -->
-      <!-- ================================================= -->
+      <!-- HOME -->
 
       <div id="page-home" class="site-page">
 
@@ -781,15 +835,12 @@ hr {
         </h3>
 
         <div id="latestNews">
-          <!-- The 3 latest news items are inserted here -->
         </div>
 
       </div>
 
 
-      <!-- ================================================= -->
-      <!-- SOCIALS                                           -->
-      <!-- ================================================= -->
+      <!-- SOCIALS -->
 
       <div id="page-socials" class="site-page">
 
@@ -816,7 +867,6 @@ hr {
           </div>
 
           <p>
-
             <a
               href="https://www.tiktok.com/@daan_tech1?_t=8s6jd25uwni&_r=1"
               target="_blank"
@@ -824,7 +874,6 @@ hr {
             >
               Daan Tech (@daan_tech1) | TikTok
             </a>
-
           </p>
 
         </div>
@@ -844,7 +893,6 @@ hr {
           </div>
 
           <p>
-
             <a
               href="https://www.youtube.com/@daan_tech1"
               target="_blank"
@@ -852,7 +900,6 @@ hr {
             >
               Daan Tech - YouTube
             </a>
-
           </p>
 
         </div>
@@ -892,7 +939,6 @@ hr {
           </div>
 
           <p>
-
             <a
               href="https://github.com/daantech1"
               target="_blank"
@@ -900,7 +946,6 @@ hr {
             >
               daantech1 (Daan Tech)
             </a>
-
           </p>
 
         </div>
@@ -920,7 +965,6 @@ hr {
           </div>
 
           <p>
-
             <a
               href="https://www.thingiverse.com/daan_tech1/designs"
               target="_blank"
@@ -928,7 +972,6 @@ hr {
             >
               Designs - daan_tech1 - Thingiverse
             </a>
-
           </p>
 
         </div>
@@ -936,9 +979,7 @@ hr {
       </div>
 
 
-      <!-- ================================================= -->
-      <!-- PROJECTS                                          -->
-      <!-- ================================================= -->
+      <!-- PROJECTS -->
 
       <div id="page-projects" class="site-page">
 
@@ -958,15 +999,12 @@ hr {
         <hr>
 
         <div id="projectsContainer">
-          <!-- Projects are inserted automatically -->
         </div>
 
       </div>
 
 
-      <!-- ================================================= -->
-      <!-- CONTACT                                           -->
-      <!-- ================================================= -->
+      <!-- CONTACT -->
 
       <div id="page-contact" class="site-page">
 
@@ -975,33 +1013,53 @@ hr {
         </h2>
 
         <p>
-          Want to talk about technology, suggest a weird project
-          or discuss a collaboration?
+          Want to talk about technology, suggest a weird project,
+          ask a question or discuss a collaboration?
         </p>
 
         <p>
-          You can contact Daan Tech by electronic mail.
+          You can send me an e-mail at:
+        </p>
+
+        <div class="contact-box">
+
+          <b>E-MAIL DAAN TECH</b>
+
+          <br><br>
+
+          <a
+            href="mailto:business.daantech@gmail.com"
+            class="contact-email"
+          >
+            business.daantech@gmail.com
+          </a>
+
+          <br><br>
+
+          Click the address above to open your e-mail program.
+
+        </div>
+
+        <p>
+          <a
+            href="mailto:business.daantech@gmail.com?subject=Daan%20Tech%20Website"
+            class="old-button"
+          >
+            SEND ME AN E-MAIL
+          </a>
         </p>
 
         <hr>
 
-        <div class="contact-box">
+        <h3>
+          Business / Collaborations
+        </h3>
 
-          <b>
-            E-MAIL DAAN TECH
-          </b>
-
-          <br><br>
-
-          General inquiries:
-
-          <br>
-
-          <a href="mailto:hello@daantech.example">
-            hello@daantech.example
-          </a>
-
-        </div>
+        <p>
+          For collaborations, projects, products, technology ideas,
+          sponsorships or other business inquiries, feel free to send me
+          an e-mail.
+        </p>
 
       </div>
 
@@ -1009,8 +1067,6 @@ hr {
 
   </div>
 
-
-  <!-- FOOTER -->
 
   <div class="footer">
 
@@ -1029,6 +1085,32 @@ hr {
     This website uses no cookies.
 
   </div>
+
+</div>
+
+
+
+<!-- ======================================================= -->
+<!-- CLIPPY                                                  -->
+<!-- ======================================================= -->
+
+<div class="clippy-helper">
+
+  <div
+    class="clippy-speech"
+    id="clippySpeech"
+  >
+    <span class="clippy-name">Clippy:</span>
+    It looks like you're visiting Daan Tech!
+  </div>
+
+  <img
+    src="clippy.png"
+    alt="Clippy"
+    class="clippy-image"
+    onclick="clippySaySomething();"
+    title="Click Clippy!"
+  >
 
 </div>
 
@@ -1095,28 +1177,18 @@ hr {
 /* ========================================================= */
 /* ========================================================= */
 /*                                                           */
-/*                                                           */
 /*          >>> EDIT WEBSITE CONTENT HERE <<<                */
 /*                                                           */
-/*   THIS IS THE PART YOU CAN EASILY CHANGE ON GITHUB.       */
-/*                                                           */
-/*                                                           */
 /* ========================================================= */
 /* ========================================================= */
 
 
 
 /* ========================================================= */
-/*                                                           */
-/*  1. LATEST NEWS                                           */
-/*                                                           */
-/*  These 3 messages appear on HOME under "Latest News".     */
-/*                                                           */
+/* LATEST NEWS                                               */
 /* ========================================================= */
 
 const latestNews = [
-
-  /* NEWS 1 */
 
   {
     date: "05.09.2026",
@@ -1127,9 +1199,6 @@ const latestNews = [
       "The new Daan Tech website is officially online. Welcome to my little corner of the World Wide Web!"
   },
 
-
-  /* NEWS 2 */
-
   {
     date: "03.09.2026",
 
@@ -1138,9 +1207,6 @@ const latestNews = [
     description:
       "I found an old computer and started experimenting with old software, strange hardware and very slow Internet technology."
   },
-
-
-  /* NEWS 3 */
 
   {
     date: "01.09.2026",
@@ -1156,11 +1222,7 @@ const latestNews = [
 
 
 /* ========================================================= */
-/*                                                           */
-/*  2. LATEST PROJECT                                        */
-/*                                                           */
-/*  This appears in the LATEST PROJECT box on the LEFT.      */
-/*                                                           */
+/* LATEST PROJECT                                            */
 /* ========================================================= */
 
 const latestProject = {
@@ -1174,16 +1236,6 @@ const latestProject = {
   description:
     "A completely unnecessary Internet-connected machine that does something nobody asked for.",
 
-  /*
-    Which project should open when someone clicks
-    "Read more..."?
-
-    0 = first project
-    1 = second project
-    2 = third project
-    3 = fourth project
-  */
-
   projectNumber:
     0
 
@@ -1192,36 +1244,12 @@ const latestProject = {
 
 
 /* ========================================================= */
-/*                                                           */
-/*  3. PROJECTS                                              */
-/*                                                           */
-/*  COPY A COMPLETE { ... } BLOCK TO ADD A NEW PROJECT.      */
-/*                                                           */
-/*  title       = project title                              */
-/*  status      = project status                             */
-/*  date        = date / month                               */
-/*  description = project description                        */
-/*  image       = image filename in your GitHub repo         */
-/*  link        = optional website link                      */
-/*  linkText    = text shown for the link                    */
-/*                                                           */
-/*  If image is empty:                                       */
-/*                                                           */
-/*      image: ""                                             */
-/*                                                           */
-/*  a grey NO IMAGE AVAILABLE box will appear.               */
-/*                                                           */
+/* PROJECTS                                                  */
 /* ========================================================= */
 
 const projects = [
 
-
-  /* ======================================================= */
-  /* TEST PROJECT 1                                          */
-  /* ======================================================= */
-
   {
-
     title:
       "THE USELESS INTERNET MACHINE",
 
@@ -1242,17 +1270,10 @@ const projects = [
 
     linkText:
       "View project"
-
   },
 
 
-
-  /* ======================================================= */
-  /* TEST PROJECT 2                                          */
-  /* ======================================================= */
-
   {
-
     title:
       "WINDOWS XP COMPUTER IN 2026",
 
@@ -1273,17 +1294,10 @@ const projects = [
 
     linkText:
       "Read more"
-
   },
 
 
-
-  /* ======================================================= */
-  /* TEST PROJECT 3                                          */
-  /* ======================================================= */
-
   {
-
     title:
       "AI CONTROLS A REAL MACHINE",
 
@@ -1304,17 +1318,10 @@ const projects = [
 
     linkText:
       "Read more"
-
   },
 
 
-
-  /* ======================================================= */
-  /* TEST PROJECT 4                                          */
-  /* ======================================================= */
-
   {
-
     title:
       "3D PRINTED INTERNET BUTTON",
 
@@ -1335,17 +1342,10 @@ const projects = [
 
     linkText:
       "View on Thingiverse"
-
   },
 
 
-
-  /* ======================================================= */
-  /* TEST PROJECT 5                                          */
-  /* ======================================================= */
-
   {
-
     title:
       "SECRET PROJECT",
 
@@ -1366,19 +1366,59 @@ const projects = [
 
     linkText:
       "More information"
-
   }
-
 
 ];
 
 
 /* ========================================================= */
-/*                                                           */
-/*        >>> END OF EASY EDIT AREA <<<                      */
-/*                                                           */
-/*   YOU NORMALLY DO NOT NEED TO EDIT ANYTHING BELOW HERE.   */
-/*                                                           */
+/* CLIPPY TEXT FOR EACH TAB                                  */
+/* ========================================================= */
+
+const clippyMessages = {
+
+  home:
+    "It looks like you're visiting Daan Tech! Have you checked the latest news yet?",
+
+  socials:
+    "Trying to find Daan Tech on the Internet? Excellent choice. I recommend clicking absolutely everything.",
+
+  projects:
+    "It looks like you're looking at projects! Some of these may actually work. No guarantees.",
+
+  contact:
+    "Need to send Daan an e-mail? I can help! Well... actually, your mail program will do most of the work."
+
+};
+
+
+/* ========================================================= */
+/* EXTRA CLIPPY MESSAGES WHEN YOU CLICK HIM                  */
+/* ========================================================= */
+
+const clippyRandomMessages = [
+
+  "Did you know this website is powered by HTML and questionable decisions?",
+
+  "I have detected a computer connected to the Internet.",
+
+  "Would you like help writing a very long e-mail to Daan?",
+
+  "Remember when websites had visitor counters? Good times.",
+
+  "Please do not feed the floppy disk drive.",
+
+  "I searched the Internet. It is still there.",
+
+  "Tip: clicking blue underlined text usually does something exciting.",
+
+  "This website contains at least 37% more retro Internet than average."
+
+];
+
+
+/* ========================================================= */
+/* END OF EASY EDIT AREA                                     */
 /* ========================================================= */
 
 
@@ -1394,10 +1434,9 @@ function showPage(pageName) {
   var pages =
     document.getElementsByClassName("site-page");
 
+
   for (var i = 0; i < pages.length; i++) {
-
     pages[i].style.display = "none";
-
   }
 
 
@@ -1406,13 +1445,64 @@ function showPage(pageName) {
 
 
   if (selectedPage) {
-
     selectedPage.style.display = "block";
-
   }
 
 
+  updateClippy(pageName);
+
   window.scrollTo(0, 0);
+
+}
+
+
+
+/* ========================================================= */
+/* CLIPPY                                                    */
+/* ========================================================= */
+
+function updateClippy(pageName) {
+
+  var speech =
+    document.getElementById("clippySpeech");
+
+
+  if (!speech) {
+    return;
+  }
+
+
+  var message =
+    clippyMessages[pageName] || "Welcome to Daan Tech!";
+
+
+  speech.innerHTML =
+    '<span class="clippy-name">Clippy:</span> ' +
+    message;
+
+}
+
+
+function clippySaySomething() {
+
+  var randomNumber =
+    Math.floor(
+      Math.random() *
+      clippyRandomMessages.length
+    );
+
+
+  var message =
+    clippyRandomMessages[randomNumber];
+
+
+  var speech =
+    document.getElementById("clippySpeech");
+
+
+  speech.innerHTML =
+    '<span class="clippy-name">Clippy:</span> ' +
+    message;
 
 }
 
@@ -1437,7 +1527,7 @@ function escapeHTML(text) {
 
 
 /* ========================================================= */
-/* RENDER THE 3 LATEST NEWS ITEMS                            */
+/* RENDER NEWS                                               */
 /* ========================================================= */
 
 function renderLatestNews() {
@@ -1492,10 +1582,9 @@ function renderLatestNews() {
 
     if (i < newsToShow.length - 1) {
 
-      var line =
-        document.createElement("hr");
-
-      container.appendChild(line);
+      container.appendChild(
+        document.createElement("hr")
+      );
 
     }
 
@@ -1506,7 +1595,7 @@ function renderLatestNews() {
 
 
 /* ========================================================= */
-/* PROJECT STATUS COLOR                                      */
+/* PROJECT STATUS                                            */
 /* ========================================================= */
 
 function getProjectStatusClass(status) {
@@ -1520,9 +1609,7 @@ function getProjectStatusClass(status) {
     statusUpper === "ONLINE" ||
     statusUpper === "FINISHED"
   ) {
-
     return "project-active";
-
   }
 
 
@@ -1530,18 +1617,14 @@ function getProjectStatusClass(status) {
     statusUpper === "IN PROGRESS" ||
     statusUpper === "TESTING"
   ) {
-
     return "project-progress";
-
   }
 
 
   if (
     statusUpper === "COMING SOON"
   ) {
-
     return "project-soon";
-
   }
 
 
@@ -1552,7 +1635,7 @@ function getProjectStatusClass(status) {
 
 
 /* ========================================================= */
-/* CREATE PROJECT IMAGE                                      */
+/* PROJECT IMAGE                                             */
 /* ========================================================= */
 
 function createProjectImage(project) {
@@ -1578,11 +1661,6 @@ function createProjectImage(project) {
     image.className =
       "project-picture";
 
-
-    /*
-      If you accidentally enter an image that does not exist,
-      it automatically changes into the grey retro placeholder.
-    */
 
     image.onerror = function() {
 
@@ -1663,20 +1741,14 @@ function renderProjects() {
       "project-" + i;
 
 
-    /* PROJECT TITLE */
-
     var title =
       document.createElement("h3");
 
     title.textContent =
       project.title;
 
-    projectBlock.appendChild(
-      title
-    );
+    projectBlock.appendChild(title);
 
-
-    /* PROJECT DATE */
 
     var date =
       document.createElement("div");
@@ -1687,12 +1759,8 @@ function renderProjects() {
     date.textContent =
       project.date;
 
-    projectBlock.appendChild(
-      date
-    );
+    projectBlock.appendChild(date);
 
-
-    /* PROJECT STATUS */
 
     var statusParagraph =
       document.createElement("p");
@@ -1705,35 +1773,22 @@ function renderProjects() {
       document.createElement("span");
 
     status.className =
-      getProjectStatusClass(
-        project.status
-      );
+      getProjectStatusClass(project.status);
 
     status.textContent =
       project.status;
 
 
-    statusParagraph.appendChild(
-      status
-    );
+    statusParagraph.appendChild(status);
 
+    projectBlock.appendChild(statusParagraph);
 
-    projectBlock.appendChild(
-      statusParagraph
-    );
-
-
-    /* PROJECT IMAGE */
 
     var projectImage =
       createProjectImage(project);
 
-    projectBlock.appendChild(
-      projectImage
-    );
+    projectBlock.appendChild(projectImage);
 
-
-    /* DESCRIPTION */
 
     var description =
       document.createElement("p");
@@ -1741,12 +1796,8 @@ function renderProjects() {
     description.textContent =
       project.description;
 
-    projectBlock.appendChild(
-      description
-    );
+    projectBlock.appendChild(description);
 
-
-    /* OPTIONAL LINK */
 
     if (
       project.link &&
@@ -1773,29 +1824,20 @@ function renderProjects() {
         project.linkText || "View project";
 
 
-      linkParagraph.appendChild(
-        link
-      );
+      linkParagraph.appendChild(link);
 
-      projectBlock.appendChild(
-        linkParagraph
-      );
+      projectBlock.appendChild(linkParagraph);
 
     }
 
 
-    container.appendChild(
-      projectBlock
-    );
+    container.appendChild(projectBlock);
 
 
     if (i < projects.length - 1) {
 
-      var line =
-        document.createElement("hr");
-
       container.appendChild(
-        line
+        document.createElement("hr")
       );
 
     }
@@ -1821,8 +1863,6 @@ function renderLatestProject() {
   container.innerHTML = "";
 
 
-  /* NEW */
-
   var newLabel =
     document.createElement("span");
 
@@ -1833,17 +1873,12 @@ function renderLatestProject() {
     "NEW!";
 
 
-  container.appendChild(
-    newLabel
-  );
-
+  container.appendChild(newLabel);
 
   container.appendChild(
     document.createElement("br")
   );
 
-
-  /* TITLE */
 
   var title =
     document.createElement("b");
@@ -1851,12 +1886,8 @@ function renderLatestProject() {
   title.textContent =
     latestProject.title;
 
-  container.appendChild(
-    title
-  );
+  container.appendChild(title);
 
-
-  /* STATUS */
 
   var statusParagraph =
     document.createElement("p");
@@ -1869,9 +1900,7 @@ function renderLatestProject() {
     "Status: ";
 
 
-  statusParagraph.appendChild(
-    statusTitle
-  );
+  statusParagraph.appendChild(statusTitle);
 
 
   var status =
@@ -1886,17 +1915,10 @@ function renderLatestProject() {
     latestProject.status;
 
 
-  statusParagraph.appendChild(
-    status
-  );
+  statusParagraph.appendChild(status);
 
+  container.appendChild(statusParagraph);
 
-  container.appendChild(
-    statusParagraph
-  );
-
-
-  /* DESCRIPTION */
 
   var description =
     document.createElement("p");
@@ -1904,13 +1926,8 @@ function renderLatestProject() {
   description.textContent =
     latestProject.description;
 
+  container.appendChild(description);
 
-  container.appendChild(
-    description
-  );
-
-
-  /* READ MORE */
 
   var link =
     document.createElement("a");
@@ -1931,9 +1948,7 @@ function renderLatestProject() {
   };
 
 
-  container.appendChild(
-    link
-  );
+  container.appendChild(link);
 
 }
 
@@ -2086,9 +2101,7 @@ function openSocialsFromPopup() {
 
   closeSocialPopup();
 
-  showPage(
-    "socials"
-  );
+  showPage("socials");
 
 }
 
@@ -2100,14 +2113,7 @@ function openSocialsFromPopup() {
 
 window.onload = function() {
 
-  /* HOME IS ALWAYS THE FIRST PAGE */
-
-  showPage(
-    "home"
-  );
-
-
-  /* LOAD EASY EDIT CONTENT */
+  showPage("home");
 
   renderLatestNews();
 
@@ -2115,13 +2121,10 @@ window.onload = function() {
 
   renderProjects();
 
-
-  /* VISITOR COUNTER */
-
   updateVisitorCounter();
 
+  updateClippy("home");
 
-  /* SOCIALS POPUP AFTER 5 SECONDS */
 
   setTimeout(
     function() {
