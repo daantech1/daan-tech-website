@@ -501,13 +501,15 @@ p {
 /* ========================================================= */
 
 /*
-  Clippy now sits just to the RIGHT of the website,
-  near the TOP banner.
+  CLIPPY POSITION
 
-  Change these if you want to move him:
+  Clippy sits just outside the website on the upper-right side.
 
-  top: 42px;
-  left: calc(50% + 395px);
+  To move him up/down:
+  change top
+
+  To move him left/right:
+  change the +395px number
 */
 
 .clippy-helper {
@@ -520,7 +522,7 @@ p {
 }
 
 
-/* SPEECH BUBBLE */
+/* CLIPPY SPEECH BUBBLE */
 
 .clippy-speech {
   position: relative;
@@ -535,17 +537,15 @@ p {
 }
 
 
-/* LITTLE SPEECH BUBBLE ARROW */
+/* SPEECH BUBBLE ARROW */
 
 .clippy-speech:after {
   content: "";
   position: absolute;
   left: 28px;
   bottom: -10px;
-
   width: 0;
   height: 0;
-
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
   border-top: 10px solid #555555;
@@ -556,19 +556,16 @@ p {
   position: absolute;
   left: 29px;
   bottom: -8px;
-
   width: 0;
   height: 0;
-
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 9px solid #ffffcc;
-
   z-index: 2;
 }
 
 
-/* CLIPPY IMAGE */
+/* CLIPPY GIF */
 
 .clippy-image {
   width: 95px;
@@ -667,6 +664,7 @@ hr {
 
 <!-- ======================================================= -->
 <!-- CLIPPY                                                  -->
+<!-- IMPORTANT: clippy.gif must be next to index.html        -->
 <!-- ======================================================= -->
 
 <div class="clippy-helper">
@@ -680,7 +678,7 @@ hr {
   </div>
 
   <img
-    src="clippy.png"
+    src="clippy.gif"
     alt="Clippy"
     class="clippy-image"
     onclick="clippySaySomething();"
@@ -758,6 +756,8 @@ hr {
     <div class="sidebar">
 
 
+      <!-- LATEST PROJECT -->
+
       <div class="box">
 
         <div class="box-title">
@@ -772,6 +772,8 @@ hr {
 
       </div>
 
+
+      <!-- VISITOR COUNTER -->
 
       <div class="box">
 
@@ -796,6 +798,8 @@ hr {
 
       </div>
 
+
+      <!-- QUICK LINKS -->
 
       <div class="box">
 
@@ -927,6 +931,7 @@ hr {
 
         <div class="social-intro">
           Here you can find all the links to all my socials.
+          Feel free to follow Daan Tech around the World Wide Web!
         </div>
 
 
@@ -996,7 +1001,7 @@ hr {
           </div>
 
           <p class="coming-soon">
-            <b>COMING BACK SOON</b>
+            COMING BACK SOON
           </p>
 
         </div>
@@ -1300,10 +1305,13 @@ const latestProject = {
     "A completely unnecessary Internet-connected machine that does something nobody asked for.",
 
   /*
+    Which project should "Read more..." open?
+
     0 = first project
     1 = second project
     2 = third project
-    etc.
+    3 = fourth project
+    4 = fifth project
   */
 
   projectNumber:
@@ -1316,11 +1324,19 @@ const latestProject = {
 /* ========================================================= */
 /* PROJECTS                                                  */
 /*                                                           */
-/* COPY ONE FULL { ... } BLOCK TO ADD ANOTHER PROJECT.       */
+/* COPY ONE COMPLETE { ... } BLOCK TO ADD A PROJECT.         */
+/*                                                           */
+/* image: ""                                                 */
+/* = no image                                                */
+/*                                                           */
+/* image: "project.jpg"                                      */
+/* = use project.jpg from the GitHub repository              */
 /* ========================================================= */
 
 const projects = [
 
+
+  /* PROJECT 1 */
 
   {
     title:
@@ -1346,6 +1362,8 @@ const projects = [
   },
 
 
+  /* PROJECT 2 */
+
   {
     title:
       "WINDOWS XP COMPUTER IN 2026",
@@ -1369,6 +1387,8 @@ const projects = [
       "Read more"
   },
 
+
+  /* PROJECT 3 */
 
   {
     title:
@@ -1394,6 +1414,8 @@ const projects = [
   },
 
 
+  /* PROJECT 4 */
+
   {
     title:
       "3D PRINTED INTERNET BUTTON",
@@ -1417,6 +1439,8 @@ const projects = [
       "View on Thingiverse"
   },
 
+
+  /* PROJECT 5 */
 
   {
     title:
@@ -1446,9 +1470,7 @@ const projects = [
 
 
 /* ========================================================= */
-/* CLIPPY TEXT                                               */
-/*                                                           */
-/* Change these if you want Clippy to say something else.    */
+/* CLIPPY TEXT FOR EVERY TAB                                 */
 /* ========================================================= */
 
 const clippyMessages = {
@@ -1472,7 +1494,7 @@ const clippyMessages = {
 /* ========================================================= */
 /* RANDOM CLIPPY MESSAGES                                    */
 /*                                                           */
-/* Click Clippy and he says one of these.                    */
+/* CLICK ON CLIPPY TO GET ONE OF THESE                       */
 /* ========================================================= */
 
 const clippyRandomMessages = [
@@ -1622,7 +1644,7 @@ function escapeHTML(text) {
 
 
 /* ========================================================= */
-/* RENDER NEWS                                               */
+/* RENDER LATEST NEWS                                        */
 /* ========================================================= */
 
 function renderLatestNews() {
@@ -1695,7 +1717,7 @@ function renderLatestNews() {
 
 
 /* ========================================================= */
-/* PROJECT STATUS                                            */
+/* PROJECT STATUS COLOR                                      */
 /* ========================================================= */
 
 function getProjectStatusClass(status) {
@@ -2011,7 +2033,7 @@ function renderLatestProject() {
     "";
 
 
-  /* NEW */
+  /* NEW LABEL */
 
   var newLabel =
     document.createElement("span");
@@ -2299,6 +2321,7 @@ window.onload = function() {
     "home"
   );
 
+
   renderLatestNews();
 
   renderLatestProject();
@@ -2312,7 +2335,7 @@ window.onload = function() {
   );
 
 
-  /* Social popup after 5 seconds */
+  /* SHOW SOCIAL POPUP AFTER 5 SECONDS */
 
   setTimeout(
     function() {
